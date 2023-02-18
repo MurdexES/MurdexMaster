@@ -1,0 +1,17 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="550" MinHeight="750" MinWidth="550" MaxHeight="750" MaxWidth="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="500"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="textEquatation" Grid.Row="0"/>
+    </Grid>
+</Window>
