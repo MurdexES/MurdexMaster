@@ -1,0 +1,24 @@
+﻿  car_showroom.cpp
+  car.cpp
+  showroom.cpp
+  menu.cpp
+  tunning.cpp
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(10,1): error C2511: 'void tunned::menuTunned(Car *)': overloaded member function not found in 'tunned'
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.h(7): message : see declaration of 'tunned'
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(17,2): error C2597: illegal reference to non-static member 'tunned::origin'
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.h(9): message : see declaration of 'tunned::origin'
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(70,4): error C2064: term does not evaluate to a function taking 1 arguments
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(86,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(90,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(94,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(98,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(102,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(110,4): error C2064: term does not evaluate to a function taking 1 arguments
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(124,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(129,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(134,5): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(143,4): error C2064: term does not evaluate to a function taking 1 arguments
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(148,16): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\tunning.cpp(161,4): error C2671: 'tunned::menuTunned': static member functions do not have 'this' pointers
+  Generating Code...
+C:\Users\LEGION PRO\source\repos\murad\car_showroom\car_showroom\menu.cpp(66): warning C4715: 'menu': not all control paths return a value

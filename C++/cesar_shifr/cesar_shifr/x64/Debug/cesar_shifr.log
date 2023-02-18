@@ -1,0 +1,3 @@
+﻿  cesar_shifr.cpp
+C:\Users\LEGION PRO\source\repos\murad\cesar_shifr\cesar_shifr\cesar_shifr.cpp(15,28): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  cesar_shifr.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\cesar_shifr\x64\Debug\cesar_shifr.exe

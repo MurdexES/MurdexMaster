@@ -1,0 +1,3 @@
+﻿  foo_massive.cpp
+C:\Users\LEGION PRO\source\repos\murad\foo_massive\foo_massive\foo_massive.cpp(10,17): warning C4267: '*=': conversion from 'size_t' to 'int', possible loss of data
+  foo_massive.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\foo_massive\x64\Debug\foo_massive.exe

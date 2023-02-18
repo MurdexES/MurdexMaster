@@ -1,0 +1,7 @@
+﻿  library_struct.cpp
+C:\Users\LEGION PRO\source\repos\murad\library_struct\library_struct\library_struct.cpp(48,39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\LEGION PRO\source\repos\murad\library_struct\library_struct\library_struct.cpp(74,35): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\LEGION PRO\source\repos\murad\library_struct\library_struct\library_struct.cpp(193,14): warning C4552: '+': result of expression not used
+C:\Users\LEGION PRO\source\repos\murad\library_struct\library_struct\library_struct.cpp(92): warning C4715: 'search_name': not all control paths return a value
+C:\Users\LEGION PRO\source\repos\murad\library_struct\library_struct\library_struct.cpp(66): warning C4715: 'search_author': not all control paths return a value
+  library_struct.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\library_struct\x64\Debug\library_struct.exe

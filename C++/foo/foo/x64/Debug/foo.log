@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\LEGION PRO\source\repos\murad\foo\foo\Source.cpp(21,10): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\LEGION PRO\source\repos\murad\foo\foo\Source.cpp(37,12): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  foo.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\foo\x64\Debug\foo.exe

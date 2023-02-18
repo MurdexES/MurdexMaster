@@ -1,0 +1,4 @@
+﻿  main_ptr_func.cpp
+C:\Users\LEGION PRO\source\repos\murad\main_ptr_func\main_ptr_func\main_ptr_func.cpp(85,12): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\LEGION PRO\source\repos\murad\main_ptr_func\main_ptr_func\main_ptr_func.cpp(65): warning C4715: 'max': not all control paths return a value
+  main_ptr_func.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\main_ptr_func\x64\Debug\main_ptr_func.exe

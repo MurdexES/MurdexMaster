@@ -1,0 +1,3 @@
+﻿  dyn_overlap.cpp
+C:\Users\LEGION PRO\source\repos\murad\dyn_overlap\dyn_overlap\dyn_overlap.cpp(108,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  dyn_overlap.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\dyn_overlap\x64\Debug\dyn_overlap.exe

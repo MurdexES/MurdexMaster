@@ -1,0 +1,7 @@
+﻿  Char_array.cpp
+  Source.cpp
+  Generating Code...
+Char_array.obj : error LNK2019: unresolved external symbol "void __cdecl mystrchr(char *)" (?mystrchr@@YAXPEAD@Z) referenced in function main
+    Hint on symbols that are defined and could potentially match:
+      "void __cdecl mystrchr(char * &)" (?mystrchr@@YAXAEAPEAD@Z)
+C:\Users\LEGION PRO\source\repos\murad\Char_array\x64\Debug\Char_array.exe : fatal error LNK1120: 1 unresolved externals

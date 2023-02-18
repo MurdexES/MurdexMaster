@@ -1,0 +1,8 @@
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\bin\Debug\murad.exe.config
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\bin\Debug\murad.exe
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\bin\Debug\murad.pdb
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\obj\Debug\murad.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\obj\Debug\murad.csproj.SuggestedBindingRedirects.cache
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\obj\Debug\murad.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\obj\Debug\murad.exe
+C:\Users\LEGION PRO\source\repos\murad\murad\murad\obj\Debug\murad.pdb
