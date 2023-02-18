@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "teBy2kkPpXsrct70DDl8gChcwywY3/mNEUS5V7UjnS1YpTh1Nbky0HzZyt8LGzoqX6YlVNZEpoP0ulTmYjqMXw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LEGION PRO\\source\\repos\\Bot\\BoBickBot\\BoBickBot\\BoBickBot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LEGION PRO\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\LEGION PRO\\.nuget\\packages\\telegram.bot\\18.0.0\\telegram.bot.18.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
