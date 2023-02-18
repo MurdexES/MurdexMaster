@@ -1,0 +1,15 @@
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\bin\Debug\net6.0\Stary.exe
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\bin\Debug\net6.0\Stary.deps.json
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\bin\Debug\net6.0\Stary.runtimeconfig.json
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\bin\Debug\net6.0\Stary.dll
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\bin\Debug\net6.0\Stary.pdb
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.dll
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\refint\Stary.dll
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.pdb
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\Stary.genruntimeconfig.cache
+C:\Users\LEGION PRO\source\repos\C#\Stary\Stary\obj\Debug\net6.0\ref\Stary.dll

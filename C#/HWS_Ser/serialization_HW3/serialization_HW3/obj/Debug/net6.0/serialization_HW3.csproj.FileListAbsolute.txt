@@ -1,0 +1,17 @@
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\serialization_HW3.exe
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\serialization_HW3.deps.json
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\serialization_HW3.runtimeconfig.json
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\serialization_HW3.dll
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\serialization_HW3.pdb
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.csproj.CopyComplete
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.dll
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\refint\serialization_HW3.dll
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.pdb
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\serialization_HW3.genruntimeconfig.cache
+C:\Users\LEGION PRO\source\repos\C#\HWS_Ser\serialization_HW3\serialization_HW3\obj\Debug\net6.0\ref\serialization_HW3.dll

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mn5Kx1R89okLS8FqsMp19SWqYawloBfnDpTs57hXcJ5x8xBotZ8qXQova8hTVv5ysTyouhkXbQOFcLE60R7G9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LEGION PRO\\source\\repos\\C#\\HWS_Ser\\serialization_HW\\serialization_HW\\serialization_HW.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LEGION PRO\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

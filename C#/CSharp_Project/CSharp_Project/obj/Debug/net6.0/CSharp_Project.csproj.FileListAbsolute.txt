@@ -1,0 +1,17 @@
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\CSharp_Project.exe
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\CSharp_Project.deps.json
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\CSharp_Project.runtimeconfig.json
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\CSharp_Project.dll
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\CSharp_Project.pdb
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.csproj.CopyComplete
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.dll
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\refint\CSharp_Project.dll
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.pdb
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\CSharp_Project.genruntimeconfig.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\CSharp_Project\CSharp_Project\obj\Debug\net6.0\ref\CSharp_Project.dll

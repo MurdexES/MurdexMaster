@@ -1,0 +1,11 @@
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\bin\Debug\HW-1.exe.config
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\bin\Debug\HW-1.exe
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\bin\Debug\HW-1.pdb
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.csproj.SuggestedBindingRedirects.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW_1.Form1.resources
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW_1.Properties.Resources.resources
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.csproj.GenerateResource.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.exe
+C:\Users\LEGION PRO\source\repos\HW\C#\HW-1\HW-1\obj\Debug\HW-1.pdb

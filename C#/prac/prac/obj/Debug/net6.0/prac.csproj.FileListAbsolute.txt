@@ -1,0 +1,5 @@
+C:\Users\LEGION PRO\source\repos\C#\prac\prac\obj\Debug\net6.0\prac.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\C#\prac\prac\obj\Debug\net6.0\prac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\C#\prac\prac\obj\Debug\net6.0\prac.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\prac\prac\obj\Debug\net6.0\prac.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\C#\prac\prac\obj\Debug\net6.0\prac.csproj.CoreCompileInputs.cache

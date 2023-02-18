@@ -1,0 +1,15 @@
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\bin\Debug\net6.0\Module 2.exe
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\bin\Debug\net6.0\Module 2.deps.json
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\bin\Debug\net6.0\Module 2.runtimeconfig.json
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\bin\Debug\net6.0\Module 2.dll
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\bin\Debug\net6.0\Module 2.pdb
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.dll
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\refint\Module 2.dll
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.pdb
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\Module 2.genruntimeconfig.cache
+C:\Users\LEGION PRO\source\repos\C#\Module 2\Module 2\obj\Debug\net6.0\ref\Module 2.dll

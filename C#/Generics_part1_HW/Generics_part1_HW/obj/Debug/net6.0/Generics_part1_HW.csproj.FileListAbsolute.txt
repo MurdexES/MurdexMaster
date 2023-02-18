@@ -1,0 +1,15 @@
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.csproj.AssemblyReference.cache
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.AssemblyInfoInputs.cache
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.AssemblyInfo.cs
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.csproj.CoreCompileInputs.cache
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\bin\Debug\net6.0\Generics_part1_HW.exe
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\bin\Debug\net6.0\Generics_part1_HW.deps.json
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\bin\Debug\net6.0\Generics_part1_HW.runtimeconfig.json
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\bin\Debug\net6.0\Generics_part1_HW.dll
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\bin\Debug\net6.0\Generics_part1_HW.pdb
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.dll
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\refint\Generics_part1_HW.dll
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.pdb
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\Generics_part1_HW.genruntimeconfig.cache
+C:\Users\LEGION PRO\source\repos\Bot\Generics_part1_HW\Generics_part1_HW\obj\Debug\net6.0\ref\Generics_part1_HW.dll
