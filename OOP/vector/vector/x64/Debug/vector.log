@@ -1,0 +1,14 @@
+﻿  vector.cpp
+C:\Users\LEGION PRO\source\repos\murad\vector\vector\vector.cpp(16,1): warning C4267: '=': conversion from 'size_t' to 'uint16_t', possible loss of data
+C:\Users\LEGION PRO\source\repos\murad\vector\vector\vector.cpp(14): message : while compiling class template member function 'Dequeue<int>::Dequeue(std::initializer_list<T>)'
+          with
+          [
+              T=int
+          ]
+C:\Users\LEGION PRO\source\repos\murad\vector\vector\vector.cpp(176): message : see reference to function template instantiation 'Dequeue<int>::Dequeue(std::initializer_list<T>)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\LEGION PRO\source\repos\murad\vector\vector\vector.cpp(176): message : see reference to class template instantiation 'Dequeue<int>' being compiled
+  vector.vcxproj -> C:\Users\LEGION PRO\source\repos\murad\vector\x64\Debug\vector.exe

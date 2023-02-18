@@ -1,0 +1,3 @@
+﻿  cesarrrr.cpp
+C:\Users\LEGION PRO\source\repos\OOP\cesarrrr\cesarrrr\cesarrrr.cpp(12): error C4700: uninitialized local variable 'i' used
+C:\Users\LEGION PRO\source\repos\OOP\cesarrrr\cesarrrr\cesarrrr.cpp(22): error C4700: uninitialized local variable 'i' used

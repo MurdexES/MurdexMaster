@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "censor", "censor\censor.vcxproj", "{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Debug|x64.ActiveCfg = Debug|x64
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Debug|x64.Build.0 = Debug|x64
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Debug|x86.ActiveCfg = Debug|Win32
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Debug|x86.Build.0 = Debug|Win32
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Release|x64.ActiveCfg = Release|x64
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Release|x64.Build.0 = Release|x64
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Release|x86.ActiveCfg = Release|Win32
+		{AE88487D-1262-409C-BFF2-7EC6F27F6FFD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {879F0713-3686-49CD-94D8-1E67DFDB59E2}
+	EndGlobalSection
+EndGlobal

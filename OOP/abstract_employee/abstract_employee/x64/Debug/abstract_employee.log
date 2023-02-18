@@ -1,0 +1,6 @@
+﻿  abstract_employee.cpp
+C:\Users\LEGION PRO\source\repos\OOP\abstract_employee\abstract_employee\abstract_employee.cpp(158,16): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+C:\Users\LEGION PRO\source\repos\OOP\abstract_employee\abstract_employee\abstract_employee.cpp(181,43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\LEGION PRO\source\repos\OOP\abstract_employee\abstract_employee\abstract_employee.cpp(206,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\LEGION PRO\source\repos\OOP\abstract_employee\abstract_employee\abstract_employee.cpp(233,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  abstract_employee.vcxproj -> C:\Users\LEGION PRO\source\repos\OOP\abstract_employee\x64\Debug\abstract_employee.exe

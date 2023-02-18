@@ -1,0 +1,42 @@
+﻿  strike_system.cpp
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(7,22): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(44,19): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(9,9): error C2065: 'Student': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(9,18): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(9,34): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(16,39): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(18,27): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(22,21): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(22,36): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(25,51): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(27,21): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(27,36): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(32,18): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(32,1): error C2541: 'delete': cannot delete objects that are not pointers
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(34,9): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(34,21): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(34,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(36,39): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(38,13): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(38,24): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(41,18): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(41,1): error C2541: 'delete': cannot delete objects that are not pointers
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(46,9): error C2065: 'Student': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(46,18): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(46,34): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(48,39): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(50,13): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(50,28): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(53,9): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(53,26): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(53,36): error C2065: 'stud': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(55,18): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(55,1): error C2541: 'delete': cannot delete objects that are not pointers
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(57,9): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(57,21): error C2061: syntax error: identifier 'Student'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(57,1): error C2143: syntax error: missing ';' before '{'
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(59,39): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(61,13): error C2065: 'group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(61,24): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(64,18): error C2065: 'tmp_group': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\strike_system\strike_system\strike_system.cpp(64,1): error C2541: 'delete': cannot delete objects that are not pointers

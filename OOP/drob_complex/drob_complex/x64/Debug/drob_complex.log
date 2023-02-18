@@ -1,0 +1,48 @@
+﻿  drob_complex.cpp
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(173,13): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(173,33): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(175,17): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(175,29): error C2065: 'numerator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(175,46): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(176,17): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(176,31): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(178,18): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(178,38): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(180,17): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(180,31): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(180,50): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(181,17): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(181,30): error C2065: 'numerator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(181,47): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(181,68): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(181,80): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(191,13): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(191,25): error C2065: 'numerator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(191,42): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(192,13): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(192,27): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(192,46): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(201,13): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(201,25): error C2065: 'numerator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(201,42): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(202,13): error C2039: 'denominator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(202,27): error C2065: 'denominator': undeclared identifier
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(202,46): error C2039: 'numerator': is not a member of 'Complex'
+C:\Users\LEGION PRO\source\repos\OOP\drob_complex\drob_complex\drob_complex.cpp(88): message : see declaration of 'Complex'

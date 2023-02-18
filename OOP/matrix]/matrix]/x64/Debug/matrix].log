@@ -1,0 +1,21 @@
+﻿  matrix].cpp
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(86,23): error C2143: syntax error: missing ';' before '+'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(194): message : see reference to class template instantiation 'Matrix<T>' being compiled
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(87,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(112,23): error C2143: syntax error: missing ';' before '-'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(112,12): error C2086: 'Matrix<T> Matrix<T>::()': redefinition
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(113,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(138,22): error C2143: syntax error: missing ';' before '*'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(138,12): error C2086: 'Matrix<T> Matrix<T>::()': redefinition
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(139,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(164,23): error C2143: syntax error: missing ';' before '/'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(164,12): error C2086: 'Matrix<T> Matrix<T>::()': redefinition
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(165,1): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(69,5): error C2760: syntax error: '}' was unexpected here; expected ';'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,23): error C3878: syntax error: unexpected token ',' following 'condition'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,23): message : missing one of:  ')' ';' ?
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,23): message : error recovery skipped: ', int identifier  . . . constant'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,66): error C2760: syntax error: ';' was unexpected here; expected ')'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,76): error C2760: syntax error: ')' was unexpected here; expected ';'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,76): error C3878: syntax error: unexpected token ')' following 'expression_statement'
+C:\Users\LEGION PRO\source\repos\OOP\matrix]\matrix]\matrix].cpp(75,76): message : error recovery skipped: ')'
