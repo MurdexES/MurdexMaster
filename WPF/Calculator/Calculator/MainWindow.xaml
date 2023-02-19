@@ -5,13 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="550" MinHeight="750" MinWidth="550" MaxHeight="750" MaxWidth="550">
+        Title="Calculator" Height="750" Width="550" MinHeight="750" MinWidth="550" MaxHeight="750" MaxWidth="550">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundedButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"  
+                            BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
             <RowDefinition Height="250" />
-            <RowDefinition Height="500"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="textEquatation" Grid.Row="0"/>
+        <Label x:Name="textEquatation" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 15 0"/>
+        <Label x:Name="textNums" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 15 0" FontSize="180"/>
+        <Grid Grid.Row ="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--DigitButtons-->
+            <Button Grid.Row="0" Grid.Column ="0" Margin="5" Click="DigitButton_Click" Content="1"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="0" Grid.Column ="1" Margin="5" Click="DigitButton_Click" Content="2"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="0" Grid.Column ="2" Margin="5" Click="DigitButton_Click" Content="3"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="1" Grid.Column ="0" Margin="5" Click="DigitButton_Click" Content="4"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="1" Grid.Column ="1" Margin="5" Click="DigitButton_Click" Content="5"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="1" Grid.Column ="2" Margin="5" Click="DigitButton_Click" Content="6"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="2" Grid.Column ="0" Margin="5" Click="DigitButton_Click" Content="7"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="2" Grid.Column ="1" Margin="5" Click="DigitButton_Click" Content="8"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="2" Grid.Column ="2" Margin="5" Click="DigitButton_Click" Content="9"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="3" Grid.Column ="1" Margin="5" Click="DigitButton_Click" Content="0"  FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}"/>
+
+            <!--OperationButtons-->
+            <Button Grid.Row="0" Grid.Column="3" Margin="5" Click="OperationButton_Click" Content="+" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="DarkSlateGray"/>
+            <Button Grid.Row="1" Grid.Column="3" Margin="5" Click="OperationButton_Click" Content="-" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="DarkSlateGray"/>
+            <Button Grid.Row="2" Grid.Column="3" Margin="5" Click="OperationButton_Click" Content="*" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="DarkSlateGray"/>
+            <Button Grid.Row="3" Grid.Column="3" Margin="5" Click="OperationButton_Click" Content="/" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="DarkSlateGray"/>
+            
+            <!--OtherButtons-->
+            <Button Grid.Row="3" Grid.Column="0" Margin="5" Click="ClearButton_Click" Content="C" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="SlateGray"/>
+            <Button Grid.Row="3" Grid.Column="2" Margin="5" Click="ResultButton_Click" Content="=" FontSize="65" FontWeight="Bold" Style="{StaticResource RoundedButton}" Foreground="AntiqueWhite" Background="SlateGray"/>
+        </Grid>
     </Grid>
 </Window>
