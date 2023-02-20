@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o3GnbIsW3kqglKapI3kXfkbVgPsdfB88qHB5BKSj4K4nWVQV1LVnXcbdB/mdqvBu5M7EjBoMbytyBJ4fqM/azg==",
+  "dgSpecHash": "QfJsf5bDjRlVwiIcFR9Q+iL3WR3gNWCQ2n7OjSSOYG5ho9iDWjMh+89aV8gprhVs30lnpcSKk/cYUgPzmp4LOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\LEGION PRO\\source\\repos\\Code\\WPF\\Calculator\\Calculator\\Calculator.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\LEGION PRO\\.nuget\\packages\\dynamicexpresso.core\\2.13.0\\dynamicexpresso.core.2.13.0.nupkg.sha512",
-    "C:\\Users\\LEGION PRO\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

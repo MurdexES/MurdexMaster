@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DynamicExpresso;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Calculator
@@ -23,7 +22,8 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<int> Nums { get; set; } = new();
+        public List<int>? Nums { get; set; } = new();
+        public List<string> Operations { get; set; } = new();
 
         public MainWindow()
         {
@@ -32,10 +32,11 @@ namespace Calculator
 
         private void DigitButton_Click(object sender, RoutedEventArgs e)
         {
+
             string getText = sender.ToString();
             getText = getText[32].ToString();
-            
             textNums.Content += getText;
+
 
             string? value = textNums.Content.ToString();
 
@@ -67,14 +68,18 @@ namespace Calculator
             if (textNums.Content.ToString() != string.Empty)
             {
                 string getText = sender.ToString();
-                int num = Convert.ToInt32(textNums.Content);
 
                 getText = getText[32].ToString();
-                Nums.Add(num);
 
+                Operations.Add(getText);
+
+                int num = Convert.ToInt32(textNums.Content);
+                Nums.Add(num);
+                
                 textEquatation.Content += num.ToString();
                 textEquatation.Content += getText;
                 textNums.Content = string.Empty;
+
             }
             else
             {
@@ -88,7 +93,27 @@ namespace Calculator
             {
                 textEquatation.Content += textNums.Content.ToString();
 
-                var result = new Interpreter().Eval(textEquatation.Content.ToString());
+                float result = Nums[0];
+
+                for (int i = 0, j = 1; i < Operations.Count ; i++, j++)
+                {
+                    if (Operations[i] == "+")
+                    {
+                        result += Nums[j];
+                    }
+                    else if (Operations[i] == "-")
+                    {
+                        result -= Nums[j];
+                    }
+                    else if (Operations[i] == "*")
+                    {
+                        result *= Nums[j];
+                    }
+                    else if (Operations[i] == "/")
+                    {
+                        result /= Nums[j];
+                    }
+                }
 
                 textNums.Content = result.ToString();
                 textEquatation.Content = string.Empty;

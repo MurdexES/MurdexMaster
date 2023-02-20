@@ -5,35 +5,7 @@
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v6.0": {
-      "DynamicExpresso.Core/2.13.0": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/DynamicExpresso.Core.dll": {
-            "assemblyVersion": "2.13.0.0",
-            "fileVersion": "2.13.0.0"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {}
-    }
+    ".NETCoreApp,Version=v6.0": {}
   },
-  "libraries": {
-    "DynamicExpresso.Core/2.13.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LuERg65zFWN4I85NffNAVsTNWH15V7X+Z5Dy4bNpDmQFr4H61BIiyiyaKSr97LM5fG8E+REdv5TJedoIqTe/0Q==",
-      "path": "dynamicexpresso.core/2.13.0",
-      "hashPath": "dynamicexpresso.core.2.13.0.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
-    }
-  }
+  "libraries": {}
 }
