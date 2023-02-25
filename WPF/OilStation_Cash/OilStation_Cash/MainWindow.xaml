@@ -1,0 +1,108 @@
+﻿<Window x:Class="OilStation_Cash.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OilStation_Cash"
+        mc:Ignorable="d"
+        Title="GAS STATION" Height="450" Width="650" MinHeight="450" MinWidth="650">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundedButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" BorderBrush="DarkSlateGray"  
+                            BorderThickness="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="325"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.35*"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="8" BorderThickness="2" BorderBrush="DarkGray" Grid.Row="0" Grid.Column="0" Margin="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Row="0" Grid.ColumnSpan="3">
+                    <Label DockPanel.Dock="Top" VerticalAlignment="Center" Margin="0 5 0 0" Height="30" Content="Gas Station" FontSize="15" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+                    <Separator DockPanel.Dock="Bottom" VerticalAlignment="Bottom" BorderThickness="3" BorderBrush="DarkGray"/>
+                </DockPanel>
+
+                <DockPanel Grid.Row="1" Grid.ColumnSpan="3" LastChildFill="False">
+                    <Label DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10" Width="50" Content="Fuel" FontSize="16" FontWeight="DemiBold"/>
+                    <ComboBox x:Name="FuelComboBox" DockPanel.Dock="Right" Margin="10" Width="180" Height="20"/>
+                </DockPanel>
+
+                <DockPanel Grid.Row="2" Grid.ColumnSpan="3" LastChildFill="False">
+                    <Label DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10" Width="50" Content="Price" FontSize="16" FontWeight="DemiBold"/>
+                    <Label x:Name="PriceLabel" DockPanel.Dock="Left" Margin="10" Width="150" Height="30" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <Label DockPanel.Dock="Right" Margin="10" Content="$" FontSize="16" FontWeight="DemiBold"/>
+                </DockPanel>
+
+                <DockPanel Grid.Row="3" Grid.ColumnSpan="3" LastChildFill="False">
+                    <RadioButton VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Amount" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray"/>
+                    <TextBox x:Name="AmountTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <Label VerticalAlignment="Top" Margin="10 5 10 10" VerticalContentAlignment="Center" Content="litr" FontSize="14" FontWeight="DemiBold"/>
+                </DockPanel>
+
+                <DockPanel Grid.Row="4" Grid.ColumnSpan="3" LastChildFill="False">
+                    <RadioButton VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Price" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray"/>
+                    <TextBox x:Name="PriceTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <Label VerticalAlignment="Top" Margin="10 5 10 10" VerticalContentAlignment="Center" Content="$" FontSize="14" FontWeight="DemiBold"/>
+                </DockPanel>
+
+                <Separator Grid.Row="5" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
+                <Label Grid.Row="5"  Margin="0 5 0 0" Content="Total : " FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+                <Label x:Name="GasStationTotalText" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 5 0 0" FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <Border CornerRadius="8" BorderThickness="2" BorderBrush="DarkGray" Grid.Row="0" Grid.Column="1" Margin="15">
+            <DockPanel LastChildFill="False">
+                <Label DockPanel.Dock="Top" Margin="0 5 0 0" Height="30" Content="Mini Cafe" FontSize="15" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+
+                <Separator DockPanel.Dock="Top" BorderThickness="3" BorderBrush="DarkGray"/>
+
+                <CheckBox x:Name="HotDogCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hot-Dog" Checked="HotDoHadler"/>
+                <CheckBox x:Name="HamburgerCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hamburger" Checked="HamburgerHandler"/>
+                <CheckBox x:Name="FrenchFriesCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="French Fries" Checked="FrenchFriesHandler"/>
+                <CheckBox x:Name="CocaColaCheckBox" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Coca Cola" Checked="CocaColaHandler"/>
+            </DockPanel>
+        </Border>
+
+        <Border CornerRadius="8" BorderThickness="2" BorderBrush="DarkGray" Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
+            <DockPanel LastChildFill="False">
+                <Button x:Name="CheckoutButton" Click="CheckoutButton_Click" DockPanel.Dock="Left" Margin="10" Width="250 " Content="Checkout" FontSize="25" FontWeight="DemiBold" Background="Brown" Foreground="AliceBlue" VerticalContentAlignment="Center" Style="{DynamicResource RoundedButton}"/>
+                <Label Margin="30 10 10 10" Width="115" Content="Total Price: " FontSize="20" FontWeight="DemiBold" VerticalContentAlignment="Center"/>
+                <Label x:Name="TotalPriceText" DockPanel.Dock="Right" Margin="10" FontSize="20" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            </DockPanel>
+        </Border>
+        
+    </Grid>
+</Window>
