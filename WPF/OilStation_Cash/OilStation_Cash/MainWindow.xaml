@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OilStation_Cash"
         mc:Ignorable="d"
-        Title="GAS STATION" Height="450" Width="650" MinHeight="450" MinWidth="650" MaxHeight="450" MaxWidth="650">
+        Title="GAS STATION" Height="500" Width="700" MinHeight="500" MinWidth="700" MaxHeight="500" MaxWidth="700">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="RoundedButton">
@@ -66,7 +66,7 @@
 
                 <DockPanel Grid.Row="2" Grid.ColumnSpan="3" LastChildFill="False">
                     <Label DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10" Width="50" Content="Price" FontSize="16" FontWeight="DemiBold"/>
-                    <Label x:Name="FuelPriceLabel" Margin="10 10 0 10" Width="150" Height="30" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <Label x:Name="FuelPriceLabel" Margin="10 10 0 10" Width="150" Height="30" HorizontalContentAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="DarkBlue"/>
                     <Label HorizontalAlignment="Right" Margin="10" Content="$" FontSize="16" FontWeight="DemiBold"/>
                 </DockPanel>
 
@@ -111,20 +111,20 @@
                 <Label Grid.Row="0" Grid.Column="1" Margin="5" Height="30" Content="Price" FontSize="15" FontWeight="DemiBold" Foreground="DarkGoldenrod" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <Label Grid.Row="0" Grid.Column="2" Margin="5" Height="30" Content="Amount" FontSize="15" FontWeight="DemiBold" Foreground="DarkGoldenrod" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
-                <CheckBox x:Name="HotDogCheckBox" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hot-Dog"/>
-                <CheckBox x:Name="HamburgerCheckBox" Grid.Row="2" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hamburger"/>
-                <CheckBox x:Name="FrenchFriesCheckBox" Grid.Row="3" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="French Fries"/>
-                <CheckBox x:Name="CocaColaCheckBox" Grid.Row="4" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Coca Cola"/>
+                <CheckBox x:Name="HotDogCheckBox" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hot-Dog" Checked="HotDogCheckBox_Checked"/>
+                <CheckBox x:Name="HamburgerCheckBox" Grid.Row="2" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hamburger" Checked="HamburgerCheckBox_Checked"/>
+                <CheckBox x:Name="FrenchFriesCheckBox" Grid.Row="3" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="French Fries" Checked="FrenchFriesCheckBox_Checked"/>
+                <CheckBox x:Name="CocaColaCheckBox" Grid.Row="4" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Coca Cola" Checked="CocaColaCheckBox_Checked"/>
 
                 <TextBox Grid.Row="1" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="4.00" FontWeight="Bold"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="5.40" FontWeight="Bold"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="7.20" FontWeight="Bold"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="4.40" FontWeight="Bold"/>
 
-                <TextBox x:Name="HotDogAmountTextBox" Grid.Row="1" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
-                <TextBox x:Name="HamburgerAmountTextBox" Grid.Row="2" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
-                <TextBox x:Name="FrenchFriesAmountTextBox" Grid.Row="3" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
-                <TextBox x:Name="CocaColaAmountTextBox" Grid.Row="4" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox x:Name="HotDogAmountTextBox" Grid.Row="1" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="HotDogAmountTextBox_TextChanged"/>
+                <TextBox x:Name="HamburgerAmountTextBox" Grid.Row="2" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="HamburgerAmountTextBox_TextChanged"/>
+                <TextBox x:Name="FrenchFriesAmountTextBox" Grid.Row="3" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="FrenchFriesAmountTextBox_TextChanged"/>
+                <TextBox x:Name="CocaColaAmountTextBox" Grid.Row="4" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="CocaColaAmountTextBox_TextChanged"/>
                 
                 <Separator Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" BorderThickness="3" BorderBrush="DarkGray"/>
 
