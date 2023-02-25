@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OilStation_Cash"
         mc:Ignorable="d"
-        Title="GAS STATION" Height="450" Width="650" MinHeight="450" MinWidth="650">
+        Title="GAS STATION" Height="450" Width="650" MinHeight="450" MinWidth="650" MaxHeight="450" MaxWidth="650">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="RoundedButton">
@@ -56,51 +56,89 @@
 
                 <DockPanel Grid.Row="1" Grid.ColumnSpan="3" LastChildFill="False">
                     <Label DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10" Width="50" Content="Fuel" FontSize="16" FontWeight="DemiBold"/>
-                    <ComboBox x:Name="FuelComboBox" DockPanel.Dock="Right" Margin="10" Width="180" Height="20"/>
+                    <ComboBox x:Name="FuelComboBox" DockPanel.Dock="Right" Margin="10" Width="180" Height="20" SelectionChanged="FuelComboBox_SelectionChanged">
+                        <ComboBoxItem Content="A-92"/>
+                        <ComboBoxItem Content="A-94"/>
+                        <ComboBoxItem Content="A-96"/>
+                        <ComboBoxItem Content="Premium"/>
+                    </ComboBox>
                 </DockPanel>
 
                 <DockPanel Grid.Row="2" Grid.ColumnSpan="3" LastChildFill="False">
                     <Label DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10" Width="50" Content="Price" FontSize="16" FontWeight="DemiBold"/>
-                    <Label x:Name="PriceLabel" DockPanel.Dock="Left" Margin="10" Width="150" Height="30" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
-                    <Label DockPanel.Dock="Right" Margin="10" Content="$" FontSize="16" FontWeight="DemiBold"/>
+                    <Label x:Name="FuelPriceLabel" Margin="10 10 0 10" Width="150" Height="30" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <Label HorizontalAlignment="Right" Margin="10" Content="$" FontSize="16" FontWeight="DemiBold"/>
                 </DockPanel>
 
                 <DockPanel Grid.Row="3" Grid.ColumnSpan="3" LastChildFill="False">
-                    <RadioButton VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Amount" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray"/>
-                    <TextBox x:Name="AmountTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <RadioButton x:Name="FuelAmountRadioButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Amount" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray" Checked="FuelAmountRadioButton_Checked"/>
+                    <TextBox x:Name="AmountTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="AmountTextBox_TextChanged"/>
                     <Label VerticalAlignment="Top" Margin="10 5 10 10" VerticalContentAlignment="Center" Content="litr" FontSize="14" FontWeight="DemiBold"/>
                 </DockPanel>
 
                 <DockPanel Grid.Row="4" Grid.ColumnSpan="3" LastChildFill="False">
-                    <RadioButton VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Price" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray"/>
-                    <TextBox x:Name="PriceTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                    <RadioButton x:Name="FuelPriceRadioButton" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" Width="80" Content="Price" VerticalContentAlignment="Center" FontSize="14" FontWeight="DemiBold" Foreground="Gray" Checked="FuelPriceRadioButton_Checked"/>
+                    <TextBox x:Name="PriceTextBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 10 0 10" Width="120" HorizontalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"  IsReadOnly="True" PreviewTextInput="NumberValidationTextBox" TextChanged="PriceTextBox_TextChanged"/>
                     <Label VerticalAlignment="Top" Margin="10 5 10 10" VerticalContentAlignment="Center" Content="$" FontSize="14" FontWeight="DemiBold"/>
                 </DockPanel>
 
                 <Separator Grid.Row="5" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
                 <Label Grid.Row="5"  Margin="0 5 0 0" Content="Total : " FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
-                <Label x:Name="GasStationTotalText" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="0 5 0 0" FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+                <Label x:Name="GasStationTotalText" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
             </Grid>
         </Border>
 
         <Border CornerRadius="8" BorderThickness="2" BorderBrush="DarkGray" Grid.Row="0" Grid.Column="1" Margin="15">
-            <DockPanel LastChildFill="False">
-                <Label DockPanel.Dock="Top" Margin="0 5 0 0" Height="30" Content="Mini Cafe" FontSize="15" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition Width="0.6*"/>
+                </Grid.ColumnDefinitions>
 
-                <Separator DockPanel.Dock="Top" BorderThickness="3" BorderBrush="DarkGray"/>
+                <Label Grid.Row="0" Grid.Column="0" Margin="0 5 0 0" Height="30" Content="Mini Cafe" FontSize="15" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+                <Separator Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Bottom" BorderThickness="3" BorderBrush="DarkGray"/>
 
-                <CheckBox x:Name="HotDogCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hot-Dog" Checked="HotDoHadler"/>
-                <CheckBox x:Name="HamburgerCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hamburger" Checked="HamburgerHandler"/>
-                <CheckBox x:Name="FrenchFriesCheckBox" DockPanel.Dock="Top" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="French Fries" Checked="FrenchFriesHandler"/>
-                <CheckBox x:Name="CocaColaCheckBox" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Coca Cola" Checked="CocaColaHandler"/>
-            </DockPanel>
+                <Label Grid.Row="0" Grid.Column="1" Margin="5" Height="30" Content="Price" FontSize="15" FontWeight="DemiBold" Foreground="DarkGoldenrod" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label Grid.Row="0" Grid.Column="2" Margin="5" Height="30" Content="Amount" FontSize="15" FontWeight="DemiBold" Foreground="DarkGoldenrod" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                <CheckBox x:Name="HotDogCheckBox" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hot-Dog"/>
+                <CheckBox x:Name="HamburgerCheckBox" Grid.Row="2" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Hamburger"/>
+                <CheckBox x:Name="FrenchFriesCheckBox" Grid.Row="3" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="French Fries"/>
+                <CheckBox x:Name="CocaColaCheckBox" Grid.Row="4" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Coca Cola"/>
+
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="4.00" FontWeight="Bold"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="5.40" FontWeight="Bold"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="7.20" FontWeight="Bold"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Text="4.40" FontWeight="Bold"/>
+
+                <TextBox x:Name="HotDogAmountTextBox" Grid.Row="1" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox x:Name="HamburgerAmountTextBox" Grid.Row="2" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox x:Name="FrenchFriesAmountTextBox" Grid.Row="3" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox x:Name="CocaColaAmountTextBox" Grid.Row="4" Grid.Column="2" Margin="10" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" PreviewTextInput="NumberValidationTextBox"/>
+                
+                <Separator Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Bottom" BorderThickness="3" BorderBrush="DarkGray"/>
+
+                <Label Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0 5 0 0" Content="Total : " FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+                <Label x:Name="CafeTotalText" Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" FontSize="20" FontWeight="DemiBold" Foreground="DarkSlateGray" VerticalContentAlignment="Center"/>
+            </Grid>
         </Border>
 
         <Border CornerRadius="8" BorderThickness="2" BorderBrush="DarkGray" Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
             <DockPanel LastChildFill="False">
                 <Button x:Name="CheckoutButton" Click="CheckoutButton_Click" DockPanel.Dock="Left" Margin="10" Width="250 " Content="Checkout" FontSize="25" FontWeight="DemiBold" Background="Brown" Foreground="AliceBlue" VerticalContentAlignment="Center" Style="{DynamicResource RoundedButton}"/>
                 <Label Margin="30 10 10 10" Width="115" Content="Total Price: " FontSize="20" FontWeight="DemiBold" VerticalContentAlignment="Center"/>
-                <Label x:Name="TotalPriceText" DockPanel.Dock="Right" Margin="10" FontSize="20" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                <Label x:Name="TotalPriceText" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="130" Margin="10 10 0 10" FontSize="20" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <Label VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 10 10 10" Content="$" FontSize="16" FontWeight="DemiBold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             </DockPanel>
         </Border>
         
