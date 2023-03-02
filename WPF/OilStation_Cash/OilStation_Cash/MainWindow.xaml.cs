@@ -127,10 +127,7 @@ namespace OilStation_Cash
         {
             if (HotDogAmountTextBox.Text != string.Empty)
             {
-                var tmp_price = Double.Parse(HotDogAmountTextBox.Text) * 4;
-                var tmp_total = (Double)CafeTotalText.Content;
-
-                CafeTotalText.Content = (tmp_price + tmp_total).ToString();
+                CafeTotalText.Content = (Convert.ToDouble(HotDogAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
             }
         }
 
@@ -138,10 +135,7 @@ namespace OilStation_Cash
         {
             if (HamburgerAmountTextBox.Text != string.Empty)
             {
-                float tmp_price = Int32.Parse(HamburgerAmountTextBox.Text) * 5.4f;
-                float tmp_total = (Single)CafeTotalText.Content;
-
-                CafeTotalText.Content = (tmp_total + tmp_price).ToString();
+                CafeTotalText.Content = (Convert.ToDouble(HamburgerAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
             }
         }
 
@@ -149,10 +143,7 @@ namespace OilStation_Cash
         {
             if (FrenchFriesAmountTextBox.Text != string.Empty)
             {
-                float tmp_price = Single.Parse(FrenchFriesAmountTextBox.Text) * 7.2f;
-                float tmp_total = Single.Parse(CafeTotalText.Content.ToString());
-
-                CafeTotalText.Content = (tmp_total + tmp_price).ToString();
+                CafeTotalText.Content = (Convert.ToDouble(FrenchFriesAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
             }
         }
 
@@ -160,10 +151,7 @@ namespace OilStation_Cash
         {
             if (CocaColaAmountTextBox.Text != string.Empty)
             {
-                float tmp_price = Single.Parse(CocaColaAmountTextBox.Text) * 4.4f;
-                float tmp_total = Single.Parse(CafeTotalText.Content.ToString());
-
-                CafeTotalText.Content = (tmp_total + tmp_price).ToString();
+                CafeTotalText.Content = (Convert.ToDouble(CocaColaAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
             }
         }
     }
