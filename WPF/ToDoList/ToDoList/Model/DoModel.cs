@@ -17,7 +17,7 @@ namespace ToDoList.Model
             Emergency
         }
 
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string Description { get; set; }
         public ToDoType Type { get; set; }
 

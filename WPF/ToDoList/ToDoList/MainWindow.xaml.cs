@@ -32,13 +32,16 @@ namespace ToDoList
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            _mainFrame.Navigate(new AddPageView());
+            AddWindowView addWindowView = new AddWindowView();
+            addWindowView.ShowDialog();
+
+            DoList.Add(addWindowView.GetDo());
 
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DoList.RemoveAt(MainListView.SelectedIndex);
         }
     }
 }

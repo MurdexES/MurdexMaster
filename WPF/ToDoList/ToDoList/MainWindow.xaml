@@ -13,7 +13,7 @@
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="0" ItemsSource="{Binding DoList}">
+        <ListView x:Name="MainListView" Grid.Row="0" ItemsSource="{Binding DoList}">
             <ListView.View>
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="DoInfo">
                     <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" Width="120"/>
@@ -37,8 +37,5 @@
             <Button x:Name="RemoveButton" Click="RemoveButton_Click" DockPanel.Dock="Right" Margin="20" Height="50" Width="100" Content="Remove" FontSize="18" FontWeight="DemiBold" Foreground="AliceBlue" Background="SlateGray"/>
         </DockPanel>
 
-        <Frame x:Name="_mainFrame" Grid.Row="0" Grid.RowSpan="2">
-            
-        </Frame>
     </Grid>
 </Window>
