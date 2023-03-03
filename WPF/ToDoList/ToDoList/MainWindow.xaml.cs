@@ -36,7 +36,6 @@ namespace ToDoList
             addWindowView.ShowDialog();
 
             DoList.Add(addWindowView.GetDo());
-
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
