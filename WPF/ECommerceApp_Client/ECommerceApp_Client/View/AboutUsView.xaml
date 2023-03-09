@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="ECommerceApp_Client.View.AboutUsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ECommerceApp_Client.View"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="650" d:DesignWidth="1150">
+    
+</UserControl>

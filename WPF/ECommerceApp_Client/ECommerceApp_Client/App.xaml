@@ -1,0 +1,37 @@
+﻿<Application x:Class="ECommerceApp_Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ECommerceApp_Client"
+             xmlns:ViewModel="clr-namespace:ECommerceApp_Client.ViewModel"
+             xmlns:View="clr-namespace:ECommerceApp_Client.View"
+             StartupUri="/View/MainWindowView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:MainViewModel}">
+            <View:MainWindowView></View:MainWindowView>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type ViewModel:HomeViewModel}">
+            <View:HomeView></View:HomeView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:BasketViewModel}">
+            <View:BasketView></View:BasketView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:ProductViewModel}">
+            <View:ProductView></View:ProductView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:LoginViewModel}">
+            <View:LoginView></View:LoginView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:RegisterViewModel}">
+            <View:RegisterView></View:RegisterView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AboutUsViewModel}">
+            <View:AboutUsView></View:AboutUsView>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

@@ -23,7 +23,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0.8" CornerRadius="3">
                             <Border.Effect>
-                                <DropShadowEffect Color="#FF72FFE5" ShadowDepth="0"/>
+                                <DropShadowEffect Color="#FF72FFE5" ShadowDepth="3"/>
                             </Border.Effect>
                             <TextBlock Foreground="{TemplateBinding BorderBrush}" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
