@@ -19,11 +19,27 @@ namespace ECommerceApp_Client.Services.Classes
             _messenger = messenger;
         }
 
-        public void NavigateTo<T>() where T : ViewModelBase
+        public void NavigateTo<T>(object? data = null) where T : ViewModelBase
         {
             _messenger.Send(new NavigationMessage()
             {
                 ViewModelType = typeof(T)
+            });
+
+            if (data != null) 
+            {
+                _messenger.Send(new DataMessages()
+                {
+                    Data = data
+                });
+            }
+        }
+
+        public void NavigateDataTo<T>(object data) where T : ViewModelBase
+        {
+            _messenger.Send(new DataMessages()
+            {
+                Data = data
             });
         }
     }

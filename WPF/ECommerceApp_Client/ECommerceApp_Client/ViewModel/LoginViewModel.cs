@@ -1,8 +1,10 @@
-﻿using ECommerceApp_Client.Services.Interfaces;
+﻿using ECommerceApp_Client.Model;
+using ECommerceApp_Client.Services.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

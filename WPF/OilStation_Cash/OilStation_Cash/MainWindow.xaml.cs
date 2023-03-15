@@ -127,7 +127,7 @@ namespace OilStation_Cash
         {
             if (HotDogAmountTextBox.Text != string.Empty)
             {
-                CafeTotalText.Content = (Convert.ToDouble(HotDogAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
+                Price.Content = (Convert.ToDouble(HotDogAmountTextBox.Text.ToString()) * 4.0 + (CafeTotalText.Content == null ? 0.0 : Convert.ToDouble(CafeTotalText.Content.ToString()))).ToString();
             }
         }
 

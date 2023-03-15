@@ -4,9 +4,324 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ECommerceApp_Client.View"
+             xmlns:cr="clr-namespace:ECommerceApp_Client.Services.Converter"
+             xmlns:ViewModel="clr-namespace:ECommerceApp_Client.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DataContext="{d:DesignInstance Type=ViewModel:RegisterViewModel}"
+             Background="Transparent"
+             d:DesignHeight="650" d:DesignWidth="1150">
+
+    <UserControl.Resources>
+        <!--Colors-->
+        <!--Background-->
+        <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#FFFFFF"/>
+        <!--Primary Colors-->
+        <SolidColorBrush x:Key="PrimaryBlueColor" Color="#142159"/>
+        <SolidColorBrush x:Key="PrimaryGrayColor" Color="#4B4D5A"/>
+        <SolidColorBrush x:Key="PrimaryWhiteColor" Color="#FFFFFF"/>
+
+        <!--Secondary Colors-->
+        <SolidColorBrush x:Key="SecondaryBlueColor" Color="#0A092D"/>
+        <SolidColorBrush x:Key="SecondaryGrayColor" Color="#696B77"/>
+
+        <!--Tertiary Color-->
+        <SolidColorBrush x:Key="TertiaryBlueColor" Color="#3650B5"/>
+        <SolidColorBrush x:Key="TertiaryGrayColor" Color="#8D8D8D"/>
+
+        <!--Text Colors-->
+        <SolidColorBrush x:Key="PrimaryTextColor" Color="#FFFFFF"/>
+
+        <!--Start: TextBoxStyle-->
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SecondaryGrayColor}"/>
+            <Setter Property="Padding" Value="5.2 3"/>
+            <Setter Property="FontWeight" Value="ExtraBlack"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="Foreground" Value="{DynamicResource SecondaryGrayColor}"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="500"/>
+            <Setter Property="MaxHeight" Value="60"/>
+            <Setter Property="MaxWidth" Value="500"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="txtBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                MaxHeight="{TemplateBinding MaxHeight}"
+                                MaxWidth="{TemplateBinding MaxWidth}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                SnapsToDevicePixels="True">
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"
+                                              Margin="-2 3"/>
+                                <Label x:Name="WaterMarkerLabel"
+                                       Content="{TemplateBinding Tag}"
+                                       FontWeight="{TemplateBinding FontWeight}"
+                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                       Visibility="Collapsed"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Padding="{TemplateBinding Padding}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="Text" Value=""/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Visibility"
+                                        TargetName="WaterMarkerLabel"
+                                        Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource TertiaryBlueColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource SecondaryBlueColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource SecondaryGrayColor}"/>
+            <Setter Property="Padding" Value="5.2 3"/>
+            <Setter Property="FontWeight" Value="ExtraBlack"/>
+            <Setter Property="FontFamily" Value="Poppins"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="Foreground" Value="{DynamicResource SecondaryGrayColor}"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="500"/>
+            <Setter Property="MaxHeight" Value="60"/>
+            <Setter Property="MaxWidth" Value="500"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="txtBorder"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                MaxHeight="{TemplateBinding MaxHeight}"
+                                MaxWidth="{TemplateBinding MaxWidth}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                SnapsToDevicePixels="True">
+                            <Grid Margin="{TemplateBinding Padding}">
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Hidden"
+                                              Margin="-2 3"/>
+
+                                <Label x:Name="WaterMarkerLabel"
+                                       Content="{TemplateBinding Tag}"
+                                       FontWeight="{TemplateBinding FontWeight}"
+                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                       HorizontalContentAlignment="Left"
+                                       HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                       Visibility="Collapsed"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Padding="{TemplateBinding Padding}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <Setter Property="Visibility"
+                                        TargetName="WaterMarkerLabel"
+                                        Value="Visible"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource TertiaryBlueColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Visibility"
+                                        TargetName="WaterMarkerLabel"
+                                        Value="Hidden"/>
+                                <Setter Property="Visibility"
+                                        TargetName="WaterMarkerLabel"
+                                        Value="Hidden"/>
+                                <Setter Property="BorderBrush"
+                                        Value="{DynamicResource SecondaryBlueColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="RoundedButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="#585858"  
+                            BorderThickness="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <cr:PasswordConverter x:Key="MyConv"></cr:PasswordConverter>
+    </UserControl.Resources>
+
+    <Border CornerRadius="8" BorderThickness="10" BorderBrush="White">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label VerticalAlignment="Center" Content="Register" FontSize="42" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+
+            <StackPanel Width="600" Grid.Row="1" Grid.Column="0">
+
+                <TextBox Style="{DynamicResource TextBoxStyle}" 
+                     Height="50"
+                     Margin="0 20 0 0"  
+                     FontSize="16"
+                     Tag="Enter Username"
+                     Text="{Binding User.Username}"/>
+
+                <TextBox Style="{DynamicResource TextBoxStyle}"
+                     Height="50"
+                     Margin="0 20 0 0" 
+                     FontSize="16"
+                     Tag="Enter EMail"
+                     Text="{Binding User.Email}"/>
+
+                <Label Content="Enter Password"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"
+                       HorizontalAlignment="Center"
+                       Foreground="#696B77"
+                       FontSize="18"
+                       Padding="5 3"
+                       Margin="0 20 0 0"/>
+
+                <PasswordBox 
+                         x:Name="Password"
+                         Style="{DynamicResource PasswordBoxStyle}"
+                         Height="50"
+                         Margin="0 0 0 0" 
+                         FontSize="16"/>
+
+                <Label Content="Confirm Password"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"
+                       HorizontalAlignment="Center"
+                       Foreground="#696B77"
+                       FontSize="18"
+                       Padding="5 3"
+                       Margin="0 20 0 0"/>
+
+                <PasswordBox
+                         x:Name="Confirm"
+                         Style="{DynamicResource PasswordBoxStyle}"
+                         Height="50" 
+                         Margin="0 0 0 0" 
+                         FontSize="16"/>
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <DockPanel>
+                    <ComboBox 
+                          ItemsSource="{Binding Operators}"
+                          DockPanel.Dock="Left"
+                          Width="70"
+                          Height="50"
+                          SelectedIndex="{Binding User.SelectedOperator}"
+                          FontSize="16"
+                          Margin="0 20 12 0"/>
+
+                    <TextBox  DockPanel.Dock="Right"
+                          Style="{DynamicResource TextBoxStyle}"
+                          Height="50"
+                          Width="400"
+                          Margin="0 20 20 0"  
+                          FontSize="16"
+                          Text="{Binding User.PhoneNumber}"
+                          Tag="Enter Phone Number"/>
+                </DockPanel>
+
+                <DatePicker 
+                        Margin="0 20 20 0"
+                        SelectedDate="{Binding User.BirthDate}"
+                        Height="40" Width="300" HorizontalAlignment="Left" FirstDayOfWeek="Monday" DisplayDate="11/16/2001" FontSize="16"/>
+            </StackPanel>
+
+            <DockPanel Width="500" Height="100" Grid.ColumnSpan="2" Grid.Row="2">
+
+                <Button Command="{Binding LoginCommand}"
+                        Style="{DynamicResource RoundedButton}"
+                        Height="60"
+                        Width="200"
+                        Content="Login"
+                        FontSize="22"
+                        FontWeight="DemiBold"
+                        FontFamily="Poppins"
+                        Foreground="White"
+                        Background="#585858"
+                        Margin="0 20 20 20"/>
+
+
+                <Button Command="{Binding RegisterCommand}"
+                        Style="{DynamicResource RoundedButton}"
+                        Height="60"
+                        Width="200"
+                        Content="Register"
+                        FontSize="22"
+                        FontWeight="DemiBold"
+                        FontFamily="Poppins"
+                        Foreground="White"
+                        Background="#585858"
+                        HorizontalAlignment="Right"
+                        Margin="20 20 0 20">
+
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConv}">
+                            <Binding ElementName="Password"/>
+                            <Binding ElementName="Confirm"/>
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+            </DockPanel>
+        </Grid>
+    </Border>
+
 </UserControl>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ECommerceApp_Client.ViewModel
 {
-    public class HomeViewModel : ViewModelBase
+    public class WomenStoreViewModel : ViewModelBase
     {
     }
 }

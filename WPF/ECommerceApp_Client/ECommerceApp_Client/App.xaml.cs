@@ -36,12 +36,14 @@ namespace ECommerceApp_Client
             Container.RegisterSingleton<IUserManageService, UserManageService>();
 
             Container.RegisterSingleton<MainViewModel>();
-            Container.RegisterSingleton<HomeViewModel>();
             Container.RegisterSingleton<LoginViewModel>();
             Container.RegisterSingleton<RegisterViewModel>();
             Container.RegisterSingleton<ProductViewModel>();
             Container.RegisterSingleton<BasketViewModel>();
             Container.RegisterSingleton<AboutUsViewModel>();
+            Container.RegisterSingleton<ItemViewModel>();
+            Container.RegisterSingleton<MenStoreViewModel>();
+            Container.RegisterSingleton<WomenStoreViewModel>();
         }
 
         private void MainStartup()

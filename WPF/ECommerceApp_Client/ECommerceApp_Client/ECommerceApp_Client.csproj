@@ -8,8 +8,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\Assets\BasketAssets\add.png" />
+    <None Remove="View\Assets\BasketAssets\close.png" />
+    <None Remove="View\Assets\BasketAssets\credit.png" />
+    <None Remove="View\Assets\BasketAssets\left.png" />
+    <None Remove="View\Assets\BasketAssets\low.png" />
+    <None Remove="View\Assets\BasketAssets\mastercard.png" />
+    <None Remove="View\Assets\BasketAssets\mini.png" />
+    <None Remove="View\Assets\BasketAssets\remove.png" />
+    <None Remove="View\Assets\BasketAssets\visa.png" />
     <None Remove="View\Assets\close_icon.png" />
     <None Remove="View\Assets\maximize_icon.png" />
+    <None Remove="View\Assets\MenShoes\AdidasUltra4D.jpg" />
+    <None Remove="View\Assets\MenShoes\AdidasUltraBoost20.jpg" />
+    <None Remove="View\Assets\MenShoes\AdidasUltraBoostMTL.jpg" />
+    <None Remove="View\Assets\MenShoes\AdidasYeezyFoam.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeACGDogMountain.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeAirHuarache.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeAirJordan4Retro.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeAirMax2.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeAirMax90.jpg" />
+    <None Remove="View\Assets\MenShoes\NikeHighTops.jpg" />
+    <None Remove="View\Assets\MenShoes\OffWhitexAirJordan.jpg" />
+    <None Remove="View\Assets\MenShoes\PumaBmwMotosport.jpg" />
+    <None Remove="View\Assets\MenShoes\PumaMercedesAmgPetronas.jpg" />
+    <None Remove="View\Assets\MenShoes\PumaXRay2SquareMid.jpg" />
+    <None Remove="View\Assets\MenShoes\PumaXRayMultiColor.jpg" />
+    <None Remove="View\Assets\MenShoes\ScuderiaFerrariRomaPuma.jpg" />
     <None Remove="View\Assets\MenuIcons\basket_icon.png" />
     <None Remove="View\Assets\MenuIcons\dropdown_icon.png" />
     <None Remove="View\Assets\MenuIcons\home_icon.png" />
@@ -19,13 +44,115 @@
     <None Remove="View\Assets\MenuIcons\store_icon.png" />
     <None Remove="View\Assets\MenuIcons\woman_icon.png" />
     <None Remove="View\Assets\minimize_icon.png" />
+    <None Remove="View\Assets\shoe_asset.jpg" />
+    <None Remove="View\Assets\WomenShoes\AdidasOriginalNMDR1.jpg" />
+    <None Remove="View\Assets\WomenShoes\AdidasOriginalsFalcon.jpg" />
+    <None Remove="View\Assets\WomenShoes\AdidasOriginalsSwift.jpg" />
+    <None Remove="View\Assets\WomenShoes\AdidasRevenergyBoost.jpg" />
+    <None Remove="View\Assets\WomenShoes\ConverseFleeceLinedHighTop.jpg" />
+    <None Remove="View\Assets\WomenShoes\NikeAirJordaRebel.jpg" />
+    <None Remove="View\Assets\WomenShoes\NikeAirMax270.jpg" />
+    <None Remove="View\Assets\WomenShoes\NikeAirMaxDia.jpg" />
+    <None Remove="View\Assets\WomenShoes\NikeAirZoomSuperRep2.jpg" />
+    <None Remove="View\Assets\WomenShoes\NikeZoomFly3.jpg" />
+    <None Remove="View\Assets\WomenShoes\PumaNova90Bloc.jpg" />
+    <None Remove="View\Assets\WomenShoes\PumaSuedeClassic.jpg" />
+    <None Remove="View\Assets\WomenShoes\PumaXRay2SquarePink.jpg" />
+    <None Remove="View\Assets\WomenShoes\PumaXRayRed.jpg" />
+    <None Remove="View\Assets\WomenShoes\ReebokCircuitTR.jpg" />
+    <None Remove="View\Assets\WomenShoes\ReebokCrossFitNano.jpg" />
+    <None Remove="View\Assets\WomenShoes\ReebokGuresu2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="View\Assets\MenShoes\AdidasUltraBoost20.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\AdidasUltraBoostMTL.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeACGDogMountain.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeAirMax2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeAirMax90.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeHighTops.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\PumaXRay2SquareMid.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\PumaXRayMultiColor.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="View\Assets\WomenShoes\PumaXRayRed.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="View\Assets\BasketAssets\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\credit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\left.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\low.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\mastercard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\mini.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\BasketAssets\visa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="View\Assets\close_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="View\Assets\maximize_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\AdidasUltra4D.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\AdidasYeezyFoam.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeAirHuarache.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\NikeAirJordan4Retro.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\OffWhitexAirJordan.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\PumaBmwMotosport.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\PumaMercedesAmgPetronas.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\MenShoes\ScuderiaFerrariRomaPuma.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="View\Assets\MenuIcons\basket_icon.png">
@@ -55,11 +182,64 @@
     <Content Include="View\Assets\minimize_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="View\Assets\shoe_asset.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\AdidasOriginalNMDR1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\AdidasOriginalsFalcon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\AdidasRevenergyBoost.jpg" />
+    <Content Include="View\Assets\WomenShoes\ConverseFleeceLinedHighTop.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\NikeAirJordaRebel.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\NikeAirMax270.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\NikeAirMaxDia.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\NikeAirZoomSuperRep2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\NikeZoomFly3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\PumaNova90Bloc.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\PumaSuedeClassic.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\PumaXRay2SquarePink.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\ReebokCircuitTR.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\ReebokCrossFitNano.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\WomenShoes\ReebokGuresu2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SimpleInjector" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="View\Assets\WomenShoes\AdidasOriginalsSwift.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

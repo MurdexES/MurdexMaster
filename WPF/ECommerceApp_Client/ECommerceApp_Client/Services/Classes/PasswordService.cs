@@ -22,7 +22,6 @@ namespace ECommerceApp_Client.Services.Classes
         public bool IsMatch()
         {
             Regex passRegex = new("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,}$");
-
             if (passRegex.IsMatch(_confirm))
             {
                 if (_password == _confirm)
@@ -30,7 +29,6 @@ namespace ECommerceApp_Client.Services.Classes
                     return true;
                 }
             }
-
             return false;
         }
     }

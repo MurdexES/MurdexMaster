@@ -47,7 +47,7 @@ namespace ECommerceApp_Client.Services.Classes
 
         private UserModel? DownloadData(string username, string password)
         {
-            using FileStream fs = new("data.json", FileMode.Open);
+            using FileStream fs = new("data.json", FileMode.OpenOrCreate);
             using StreamReader sr = new(fs);
 
             Users = _serializeService.Deserialize<List<UserModel>>(sr.ReadToEnd());

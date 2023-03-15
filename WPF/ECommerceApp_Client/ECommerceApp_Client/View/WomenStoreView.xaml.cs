@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ECommerceApp_Client.View
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for WomenStoreView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class WomenStoreView : UserControl
     {
-        public HomeView()
+        public WomenStoreView()
         {
             InitializeComponent();
         }

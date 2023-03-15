@@ -1,4 +1,5 @@
-﻿using ECommerceApp_Client.Services.Interfaces;
+﻿using ECommerceApp_Client.Model;
+using ECommerceApp_Client.Services.Interfaces;
 using ECommerceApp_Client.Services.Messages;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -17,7 +18,16 @@ namespace ECommerceApp_Client.ViewModel
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _navigationService;
         private ViewModelBase _currentViewModel;
+        //private UserModel _currentUser;
 
+        //public UserModel CurrentUser
+        //{
+        //    get => _currentUser;
+        //    set
+        //    {
+        //        Set(ref _currentUser, value);
+        //    }
+        //}
         public ViewModelBase CurrentViewModel
         {
             get => _currentViewModel;
@@ -42,11 +52,19 @@ namespace ECommerceApp_Client.ViewModel
             _navigationService = navigationService;
         }
 
-        public RelayCommand HomeCommand
+        public RelayCommand MenStoreCommand
         {
             get => new(() =>
             {
-                _navigationService.NavigateTo<HomeViewModel>();
+                _navigationService.NavigateTo<MenStoreViewModel>();
+            });
+        }
+
+        public RelayCommand WomenStoreCommand
+        {
+            get => new(() =>
+            {
+                _navigationService.NavigateTo<WomenStoreViewModel>();
             });
         }
 

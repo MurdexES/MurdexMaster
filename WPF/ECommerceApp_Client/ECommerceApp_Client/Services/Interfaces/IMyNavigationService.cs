@@ -9,6 +9,7 @@ namespace ECommerceApp_Client.Services.Interfaces
 {
     public interface IMyNavigationService
     {
-        public void NavigateTo<T>() where T : ViewModelBase;
+        public void NavigateTo<T>(object? data = null) where T : ViewModelBase;
+        public void NavigateDataTo<T>(object data) where T : ViewModelBase;
     }
 }

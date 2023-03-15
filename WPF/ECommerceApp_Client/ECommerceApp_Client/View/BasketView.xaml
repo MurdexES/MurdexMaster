@@ -5,8 +5,122 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ECommerceApp_Client.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="650" d:DesignWidth="1150">
+
+    <Border CornerRadius="8" BorderThickness="4" BorderBrush="#ECF0F1">
+        <Grid Background="#ECF0F1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Products Section-->
+            <Grid Background="#ECF0F1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Title-->
+                <StackPanel Orientation="Horizontal" Margin="0 40 0 30">
+                    <TextBlock Text="{Binding User}" FontSize="28" FontWeight="SemiBold" FontFamily="Trebuchet MS" VerticalAlignment="Center" Margin="50 0 0 0"/>
+                    <Rectangle VerticalAlignment="Stretch" Fill="#808080" Width="0.7" Margin="20 5 20 5"/>
+                    <TextBlock Text="Your Shopping Cart" FontSize="26" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!--Products-->
+                <StackPanel Grid.Row="1">
+
+                    
+
+                </StackPanel>
+
+                <!--Bottom Section-->
+                <Grid Grid.Row="2" Margin="80 40 150 40">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <TextBlock Text="Subtotal :" FontSize="16"/>
+                        <TextBlock Text="{Binding Total}" FontWeight="SemiBold" FontSize="16" Margin="30 0 0 0"/>
+                        <TextBlock Text="$" FontWeight="SemiBold" FontSize="16" Margin="30 0 0 0 "/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <!--Card Section-->
+            <Grid Grid.Column="1" Background="#4B4643" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="269*"/>
+                    <ColumnDefinition Width="31*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Effect>
+                    <DropShadowEffect ShadowDepth="10" BlurRadius="50"/>
+                </Grid.Effect>
+
+                <!--Ellipses-->
+                <Border HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="130" Margin="-30 50 0 0" Background="#4B4643" CornerRadius="10 0 0 10" Padding="10 20 5 20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Ellipse Width="8" Height="8" Fill="#7B7A78" Grid.Row="0"/>
+                        <Ellipse Width="8" Height="8" Fill="#111530" Grid.Row="1"/>
+                        <Ellipse Width="8" Height="8" Fill="#7B7A78" Grid.Row="2"/>
+                    </Grid>
+                </Border>
+
+                <!--Inputs-->
+                <StackPanel Margin="50,100,19,0" VerticalAlignment="Top">
+                    <TextBlock Text="Card Details" Foreground="#111530" FontWeight="SemiBold" FontSize="24" Margin="0 0 0 70"/>
+
+                    <TextBlock Text="Select Card Type" Style="{StaticResource titleText}"/>
+                    <Grid Margin="0 15 0 30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" HorizontalAlignment="Left" Source="Assets/BasketAssets/mastercard.png" Width="25" Style="{StaticResource icon}"/>
+                        <Image Grid.Column="1" HorizontalAlignment="Center" Source="Assets/BasketAssets/visa.png" Width="25" Style="{StaticResource icon}"/>
+                        <Image Grid.Column="2" HorizontalAlignment="Right" Source="Assets/BasketAssets/credit.png" Width="25" Style="{StaticResource icon}"/>
+                    </Grid>
+
+                    <TextBlock Text="Card Number" Style="{StaticResource titleText}"/>
+                    <TextBox x:Name="CardNumber" PreviewTextInput="CardNumber_PreviewTextInput" Margin="0 5 0 30"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel>
+                            <TextBlock Text="Expire Date" Style="{StaticResource titleText}"/>
+                            <DockPanel>
+                                <TextBox Width="50" HorizontalAlignment="Left" PreviewTextInput="ExpireDateTextBox_PreviewTextInput" Margin="0 5 0 0"/>
+                                <TextBlock Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="/" FontSize="15" FontWeight="DemiBold" Foreground="White"/>
+                                <TextBox Width="50" HorizontalAlignment="Right" PreviewTextInput="TextBox_PreviewTextInput" Margin="0 5 0 0"/>
+                            </DockPanel>                            
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="30 0 0 0" Width="50">
+                            <TextBlock Text="CVV" Style="{StaticResource titleText}"/>
+                            <TextBox x:Name="CVVTextBox" PreviewTextInput="CVVTextBox_PreviewTextInput" Margin="0 5 0 0"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <Button Content="Checkout" Style="{StaticResource buttonCheckout}" Grid.ColumnSpan="2"/>
+            </Grid>
+
+        </Grid>
+    </Border>
 </UserControl>
