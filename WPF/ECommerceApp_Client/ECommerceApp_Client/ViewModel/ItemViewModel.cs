@@ -11,7 +11,7 @@ namespace ECommerceApp_Client.ViewModel
 {
     public class ItemViewModel : ViewModelBase
     {
-        public ProductModel Product { get; set; }
+        public ProductModel Product { get; set; } = new();
 
         public ItemViewModel() 
         {

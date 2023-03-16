@@ -22,7 +22,7 @@ namespace ECommerceApp_Client.ViewModel
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
 
-        public ProductModel Product { get; set; } = new ProductModel("Guest", 14.9f, "Good", 4, "Brand", "Assets/close_icon.png");
+        public ProductModel Product { get; set; } = new();
         public MenStoreViewModel(IMessenger messenger, ISerializeService serializeService)
         {
             _messenger = messenger;

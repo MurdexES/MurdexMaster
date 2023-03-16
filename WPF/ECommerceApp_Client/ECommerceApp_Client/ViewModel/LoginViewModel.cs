@@ -17,7 +17,7 @@ namespace ECommerceApp_Client.ViewModel
     {
         private readonly IMyNavigationService _navigationService;
         private readonly IUserManageService _userManageService;
-        public string Username { get; set; }
+        public string Username { get; set; } = string.Empty;
 
         public LoginViewModel(IMyNavigationService navigationService, IUserManageService userManageService)
         {
