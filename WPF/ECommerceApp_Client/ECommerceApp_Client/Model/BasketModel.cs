@@ -13,5 +13,12 @@ namespace ECommerceApp_Client.Model
     {
         public ObservableCollection<ProductModel> Products {  get; set; }
         public float Total { get; set; }
+
+        public void AddToBasket(ProductModel product)
+        {
+            Products.Add(product);
+
+            Total += product.Price;
+        }
     }
 }

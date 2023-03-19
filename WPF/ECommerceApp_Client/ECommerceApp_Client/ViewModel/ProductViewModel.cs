@@ -14,6 +14,7 @@ namespace ECommerceApp_Client.ViewModel
     public class ProductViewModel : ViewModelBase
     {
         public ProductModel Product { get; set; } = new();
+
         private readonly IMyNavigationService _navigationService;
 
         public ProductViewModel(IMyNavigationService navigationService)

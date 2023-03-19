@@ -1,0 +1,13 @@
+﻿<Application x:Class="ECommerceApp_Admin.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ECommerceApp_Admin"
+             xmlns:ViewModel="clr-namespace:ECommerceApp_Admin.ViewModel"
+             xmlns:View="clr-namespace:ECommerceApp_Admin.View"
+             StartupUri="View/MainWindowView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type ViewModel:MainViewModel}">
+            <View:MainWindowView></View:MainWindowView>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

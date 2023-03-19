@@ -20,8 +20,6 @@ namespace ECommerceApp_Client.ViewModel
     {
         public BasketModel Basket { get; set; } = new();
         public CardModel Card { get; set; } = new();
-
-        private static int iter = 0;
         
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;  
@@ -33,8 +31,7 @@ namespace ECommerceApp_Client.ViewModel
 
             _messenger.Register<DataMessages>(this, messenger =>
             {
-                Basket.Products[iter] = messenger.Data as ProductModel;
-                iter++;
+                Basket.AddToBasket(messenger.Data as ProductModel);
             });   
         }
 

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ECommerceApp_Client.ViewModel
 {
@@ -18,6 +19,8 @@ namespace ECommerceApp_Client.ViewModel
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _navigationService;
         private ViewModelBase _currentViewModel;
+
+        Window mainWindow;
         //private UserModel _currentUser;
 
         //public UserModel CurrentUser

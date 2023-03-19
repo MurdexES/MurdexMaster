@@ -8,6 +8,23 @@
              d:DataContext="{d:DesignInstance Type=ViewModel:MenStoreViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1150">
+    <UserControl.Resources>
+        <Style x:Key="Product_Button" TargetType="Border">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Background" Value="#645D58"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                    <Setter Property="Background"
+                            Value="#9E9996" />
+                    <Setter Property="BorderBrush"
+                            Value="#9E9996" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
@@ -15,20 +32,21 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
-            <Button Content="serilize" Command="{Binding SerlCommand}"/>
-            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text="0" FontSize="22" Foreground="White" Margin="10"/>
-            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text=": Items in Basket" FontSize="22" FontFamily="Poppins" Foreground="White" Margin="10"/>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text="0" FontSize="22" Foreground="White" FontWeight="DemiBold" Margin="10"/>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text=": Items in Basket" FontSize="22" FontFamily="Poppins" Foreground="White" FontWeight="DemiBold" Margin="10"/>
         </StackPanel>
-
-        <!--<StackPanel Grid.Row="1" Height="400" Width="300" Background="White" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+        
+        
         <Border Grid.Row="1" CornerRadius="8" BorderThickness="4" BorderBrush="White"  Background="White">
             <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1">
                 <StackPanel>
                     <StackPanel Margin="10 0">
-                        <ItemsControl ItemsSource="{Binding Products}">
+                        <ItemsControl ItemsSource="{Binding ProductViews}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    
+                                    <ContentControl Height="400" Width="300">
+                                        
+                                    </ContentControl>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                             <ItemsControl.ItemsPanel>

@@ -17,32 +17,33 @@ namespace ECommerceApp_Client.ViewModel
 {
     public class MenStoreViewModel : ViewModelBase
     {
-        public ObservableCollection<ProductModel> Products { get; set; } = new(); 
+        public ObservableCollection<ProductViewModel> ProductViews { get; set; } = new(); 
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
+        private readonly IMyNavigationService _myNavigationService;
 
-        public ProductModel Product { get; set; } = new();
-        public MenStoreViewModel(IMessenger messenger, ISerializeService serializeService)
+        public MenStoreViewModel(IMessenger messenger, ISerializeService serializeService, IMyNavigationService myNavigationService)
         {
             _messenger = messenger;
             _serializeService = serializeService;
+            _myNavigationService = myNavigationService;
 
             _messenger.Register<DataMessages>(this, messenger =>
             {
-                Products = messenger.Data as ObservableCollection<ProductModel>;
+                ProductViews = messenger.Data as ObservableCollection<ProductViewModel>;
             });
         }
 
-        public RelayCommand SerlCommand
-        {
-            get => new(() =>
-            {
-                string? json = _serializeService.Serialize<ProductModel>(Product);
-                using FileStream fs = new("newdata.json", FileMode.OpenOrCreate);
-                using StreamWriter sw = new(fs);
-                sw.Write(json);
-            });
-        }
+        //public RelayCommand SerlCommand
+        //{
+        //    get => new(() =>
+        //    {
+        //        string? json = _serializeService.Serialize<ProductModel>();
+        //        using FileStream fs = new("newdata.json", FileMode.OpenOrCreate);
+        //        using StreamWriter sw = new(fs);
+        //        sw.Write(json);
+        //    });
+        //}
     }
 }
