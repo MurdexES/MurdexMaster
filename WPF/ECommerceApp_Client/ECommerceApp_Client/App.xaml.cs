@@ -34,11 +34,10 @@ namespace ECommerceApp_Client
             Container.RegisterSingleton<IMyNavigationService, NavigationService>();
             Container.RegisterSingleton<ISerializeService, SerializeService>();
             Container.RegisterSingleton<IUserManageService, UserManageService>();
-
+            
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<LoginViewModel>();
             Container.RegisterSingleton<RegisterViewModel>();
-            Container.RegisterSingleton<ProductViewModel>();
             Container.RegisterSingleton<BasketViewModel>();
             Container.RegisterSingleton<AboutUsViewModel>();
             Container.RegisterSingleton<ItemViewModel>();

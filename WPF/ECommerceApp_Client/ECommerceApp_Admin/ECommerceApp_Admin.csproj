@@ -8,7 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Remove="View\Assets\exit_icon.png" />
+    <None Remove="View\Assets\maximize_icon.png" />
+    <None Remove="View\Assets\minimize_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="View\Assets\exit_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\maximize_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="View\Assets\minimize_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

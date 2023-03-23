@@ -19,8 +19,6 @@ namespace ECommerceApp_Client.ViewModel
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _navigationService;
         private ViewModelBase _currentViewModel;
-
-        Window mainWindow;
         //private UserModel _currentUser;
 
         //public UserModel CurrentUser

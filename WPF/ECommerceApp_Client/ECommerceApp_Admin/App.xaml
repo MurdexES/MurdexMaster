@@ -9,5 +9,17 @@
         <DataTemplate DataType="{x:Type ViewModel:MainViewModel}">
             <View:MainWindowView></View:MainWindowView>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:AddViewModel}">
+            <View:AddView></View:AddView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:ChangeViewModel}">
+            <View:ChangeView></View:ChangeView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type ViewModel:DeleteViewModel}">
+            <View:DeleteView></View:DeleteView>
+        </DataTemplate>
     </Application.Resources>
 </Application>

@@ -1,14 +1,11 @@
-﻿using ECommerceApp_Client.Services.Interfaces;
-using GalaSoft.MvvmLight.Command;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Documents;
 
-namespace ECommerceApp_Client.Model
+namespace ECommerceApp_Admin.Model
 {
     public enum Categories
     {
@@ -28,7 +25,7 @@ namespace ECommerceApp_Client.Model
         private int _categorySelect;
         public int CategorySelect
         {
-            get => _categorySelect;
+            get => _categorySelect; 
             set
             {
                 _categorySelect = value;
@@ -55,19 +52,6 @@ namespace ECommerceApp_Client.Model
             set
             {
                 _category = value;
-
-                if (value == Categories.Sneakers)
-                {
-                    CategorySelect = 1;
-                }
-                else if (value == Categories.Running)
-                {
-                    CategorySelect = 2;
-                }
-                else if (value == Categories.Basketball)
-                {
-                    CategorySelect = 3;
-                }
             }
         }
 

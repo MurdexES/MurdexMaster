@@ -1,5 +1,8 @@
-﻿using ECommerceApp_Admin.View;
+﻿using ECommerceApp_Admin.Services.Classes;
+using ECommerceApp_Admin.Services.Interfaces;
+using ECommerceApp_Admin.View;
 using ECommerceApp_Admin.ViewModel;
+using GalaSoft.MvvmLight.Messaging;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -20,12 +23,21 @@ namespace ECommerceApp_Admin
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            
+            Register();
+            MainStartup();
         }
 
         private void Register()
         {
+            Container.RegisterSingleton<IMessenger, Messenger>();
+
+            Container.RegisterSingleton<ISerializeService, SerializeService>();
+            Container.RegisterSingleton<IMyNavigationService, MyNavigationService>();
+
             Container.RegisterSingleton<MainViewModel>();
+            Container.RegisterSingleton<AddViewModel>();
+            Container.RegisterSingleton<DeleteViewModel>();
+            Container.RegisterSingleton<ChangeViewModel>();
         }
 
         private void MainStartup()

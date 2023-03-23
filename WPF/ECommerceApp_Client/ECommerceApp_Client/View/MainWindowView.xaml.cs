@@ -49,12 +49,9 @@ namespace ECommerceApp_Client.View
             App.Current.Shutdown();
         }
 
-        private void StackPanel_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
-            {
-                this.DragMove();
-            }
+            this.DragMove();
         }
     }
 }

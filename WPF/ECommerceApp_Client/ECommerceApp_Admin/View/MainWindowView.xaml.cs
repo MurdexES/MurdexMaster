@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ECommerceApp_Admin.Services.Interfaces;
+using ECommerceApp_Admin.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,36 @@ namespace ECommerceApp_Admin.View
         public MainWindowView()
         {
             InitializeComponent();
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        static bool check = false;
+        private void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (check)
+            {
+                this.WindowState = WindowState.Normal;
+                check = false;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+                check = true;
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

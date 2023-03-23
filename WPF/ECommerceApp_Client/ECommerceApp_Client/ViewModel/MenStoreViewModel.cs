@@ -17,7 +17,8 @@ namespace ECommerceApp_Client.ViewModel
 {
     public class MenStoreViewModel : ViewModelBase
     {
-        public ObservableCollection<ProductViewModel> ProductViews { get; set; } = new(); 
+        public ObservableCollection<ProductModel> Products { get; set; } = new();
+        public int basketNumber;
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
@@ -28,10 +29,20 @@ namespace ECommerceApp_Client.ViewModel
             _messenger = messenger;
             _serializeService = serializeService;
             _myNavigationService = myNavigationService;
+        }
 
-            _messenger.Register<DataMessages>(this, messenger =>
+        public RelayCommand<object> AddCommand
+        {
+            get => new(title =>
             {
-                ProductViews = messenger.Data as ObservableCollection<ProductViewModel>;
+                for (int i = 0; i < Products.Count; i++)
+                {
+                    if (Products[i].Title == title)
+                    {
+                        _myNavigationService.NavigateDataTo<BasketViewModel>(Products[i]);
+                        basketNumber++;
+                    }
+                }
             });
         }
 

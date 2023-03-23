@@ -40,7 +40,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Image Grid.Row="0" Source="{Binding Product.ProductImage}" Stretch="Fill"/>
+            <Image Grid.Row="0" Source="Assets/close_icon.png" Stretch="Fill"/>
 
             <Button Grid.Row="0"
                 Height="100"
@@ -66,7 +66,7 @@
                 </Border.Background>
 
                 <Grid>
-                    <TextBlock Text="{Binding Product.Brand}" FontSize="18" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
+                    <TextBlock Text="Nike" FontSize="18" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"/>
                     <TextBlock Text="{Binding Product.Price}" FontSize="18" Foreground="White" FontWeight="DemiBold" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"/>
 
                     <TextBlock Text="{Binding Product.Title}" FontSize="24" FontWeight="DemiBold" Foreground="#E54F20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5"/>

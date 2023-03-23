@@ -1,32 +1,31 @@
-﻿using ECommerceApp_Client.Model;
-using ECommerceApp_Client.Services.Interfaces;
+﻿using ECommerceApp_Admin.Model;
+using ECommerceApp_Admin.Services.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ECommerceApp_Client.ViewModel
+namespace ECommerceApp_Admin.ViewModel
 {
-    public class ProductViewModel : ViewModelBase
+    public class ChangeViewModel : ViewModelBase
     {
         public ProductModel Product { get; set; } = new();
 
         private readonly IMyNavigationService _navigationService;
 
-        public ProductViewModel(IMyNavigationService navigationService)
+        public ChangeViewModel(IMyNavigationService navigationService)
         {
             _navigationService = navigationService;
         }
 
-        public RelayCommand AddProduct
+        public RelayCommand ChangeAcceptCommand
         {
             get => new(() =>
             {
-                _navigationService.NavigateDataTo<BasketViewModel>(Product);
+                _navigationService.NavigateChangeTo<MainViewModel>(Product);
             });
         }
     }
