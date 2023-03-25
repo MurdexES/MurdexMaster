@@ -200,12 +200,12 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Label VerticalAlignment="Center" Content="Register" FontSize="42" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
 
-            <StackPanel Width="600" Grid.Row="1" Grid.Column="0">
+            <StackPanel Width="600" Grid.Row="1" Grid.ColumnSpan="2">
 
                 <TextBox Style="{DynamicResource TextBoxStyle}" 
                      Height="50"
@@ -218,7 +218,7 @@
                      Height="50"
                      Margin="0 20 0 0" 
                      FontSize="16"
-                     Tag="Enter EMail"
+                     Tag="Enter E-Mail"
                      Text="{Binding User.Email}"/>
 
                 <Label Content="Enter Password"
@@ -258,49 +258,7 @@
 
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Grid.Column="1">
-                <DockPanel>
-                    <ComboBox 
-                          ItemsSource="{Binding Operators}"
-                          DockPanel.Dock="Left"
-                          Width="70"
-                          Height="50"
-                          SelectedIndex="{Binding User.SelectedOperator}"
-                          FontSize="16"
-                          Margin="0 20 12 0"/>
-
-                    <TextBox  DockPanel.Dock="Right"
-                          Style="{DynamicResource TextBoxStyle}"
-                          Height="50"
-                          Width="400"
-                          Margin="0 20 20 0"  
-                          FontSize="16"
-                          Text="{Binding User.PhoneNumber}"
-                          Tag="Enter Phone Number"/>
-                </DockPanel>
-
-                <DatePicker 
-                        Margin="0 20 20 0"
-                        SelectedDate="{Binding User.BirthDate}"
-                        Height="40" Width="300" HorizontalAlignment="Left" FirstDayOfWeek="Monday" DisplayDate="11/16/2001" FontSize="16"/>
-            </StackPanel>
-
-            <DockPanel Width="500" Height="100" Grid.ColumnSpan="2" Grid.Row="2">
-
-                <Button Command="{Binding LoginCommand}"
-                        Style="{DynamicResource RoundedButton}"
-                        Height="60"
-                        Width="200"
-                        Content="Login"
-                        FontSize="22"
-                        FontWeight="DemiBold"
-                        FontFamily="Poppins"
-                        Foreground="White"
-                        Background="#585858"
-                        Margin="0 20 20 20"/>
-
-
-                <Button Command="{Binding RegisterCommand}"
+            <Button Command="{Binding RegisterCommand}"
                         Style="{DynamicResource RoundedButton}"
                         Height="60"
                         Width="200"
@@ -310,17 +268,17 @@
                         FontFamily="Poppins"
                         Foreground="White"
                         Background="#585858"
-                        HorizontalAlignment="Right"
-                        Margin="20 20 0 20">
+                        HorizontalAlignment="Center"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2">
 
-                    <Button.CommandParameter>
-                        <MultiBinding Converter="{StaticResource MyConv}">
-                            <Binding ElementName="Password"/>
-                            <Binding ElementName="Confirm"/>
-                        </MultiBinding>
-                    </Button.CommandParameter>
-                </Button>
-            </DockPanel>
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConv}">
+                        <Binding ElementName="Password"/>
+                        <Binding ElementName="Confirm"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
         </Grid>
     </Border>
 

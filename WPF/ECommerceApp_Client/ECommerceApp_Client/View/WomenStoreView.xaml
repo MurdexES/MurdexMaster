@@ -34,7 +34,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" FlowDirection="RightToLeft" >
-            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding basketNumber}" FontSize="22" Foreground="White" FontWeight="DemiBold" Margin="10" Width="50" Height="50"/>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text="{Binding BasketNumber}" FontSize="22" Foreground="White" FontWeight="DemiBold" Margin="10" Width="50" Height="50"/>
             <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Text=": Items in Basket" FontSize="22" FontFamily="Poppins" Foreground="White" FontWeight="DemiBold" Margin="10"/>
         </StackPanel>
 
@@ -46,14 +46,14 @@
                         <ItemsControl ItemsSource="{Binding Products}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border CornerRadius="5" BorderThickness="5">
+                                    <Border CornerRadius="5" BorderThickness="5" Margin="20">
                                         <Border.BorderBrush>
                                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                                 <GradientStop Color="#1D1D1D" Offset="0.0"/>
                                                 <GradientStop Color="#394259" Offset="1.0"/>
                                             </LinearGradientBrush>
                                         </Border.BorderBrush>
-                                        <Grid>
+                                        <Grid Width="300" Height="400">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="300"/>
                                                 <RowDefinition/>

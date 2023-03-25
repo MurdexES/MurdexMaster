@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ECommerceApp_Client.View"
-             xmlns:ViewModel="clr-namespace:ECommerceApp_Client.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="650" d:DesignWidth="1150">
+             d:DesignHeight="650" d:DesignWidth="1150"
+             Name="BasketControl">
 
     <Border CornerRadius="8" BorderThickness="4" BorderBrush="#ECF0F1">
         <Grid Background="#ECF0F1">
@@ -36,11 +36,60 @@
                 </StackPanel>
 
                 <!--Products-->
-                <StackPanel Grid.Row="1">
+                <Border Grid.Row="1" CornerRadius="8" BorderThickness="4" BorderBrush="#ECF0F1"  Background="#ECF0F1">
+                    <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1">
+                        <StackPanel>
+                            <StackPanel Margin="10 0">
+                                <ItemsControl ItemsSource="{Binding Products}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Background="#E5E9EA" Margin="0 15 0 0" HorizontalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="150"/>
+                                                    <ColumnDefinition Width="150"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="27"/>
+                                                    <ColumnDefinition Width="60"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="50"/>
+                                                </Grid.ColumnDefinitions>
 
-                    
+                                                <Ellipse Height="80" Width="80" Margin="25 10 0 10" HorizontalAlignment="Left">
+                                                    <Ellipse.Fill>
+                                                        <ImageBrush ImageSource="{Binding Product.ProductImage}"/>
+                                                    </Ellipse.Fill>
+                                                </Ellipse>
 
-                </StackPanel>
+                                                <TextBlock Grid.Column="1" Text="{Binding Product.Title}" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Product.Description}" Foreground="#909090" FontSize="11" VerticalAlignment="Center" Margin="0 38 0 0"/>
+
+                                                <TextBlock Grid.Column="2" Text="{Binding Product.Brand}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+
+                                                <TextBlock Grid.Column="3" Text="{Binding Product.Quantity}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+
+                                                <TextBlock Grid.Column="5" Text="{Binding Product.Price}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+                                                <TextBlock Grid.Column="6" Text="USD" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="14"/>
+
+                                                <Button Style="{StaticResource buttonDelete}" 
+                                                        Grid.Column="7"
+                                                        Command="{Binding Path=DataContext.DeleteProductCommand, ElementName=BasketControl}"
+                                                        CommandParameter="{Binding Title}">
+                                                    <Image Source="Assets/BasketAssets/remove.png" Width="18" Style="{StaticResource icon}"/>
+                                                </Button>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
 
                 <!--Bottom Section-->
                 <Grid Grid.Row="2" Margin="80 40 150 40">

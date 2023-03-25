@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using ECommerceApp_Client.Model;
+using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace ECommerceApp_Client.Services.Interfaces
     {
         public void NavigateTo<T>(object? data = null) where T : ViewModelBase;
         public void NavigateDataTo<T>(object data) where T : ViewModelBase;
+        public void NavigateToBasket<T>(ProductModel product) where T : ViewModelBase;
     }
 }

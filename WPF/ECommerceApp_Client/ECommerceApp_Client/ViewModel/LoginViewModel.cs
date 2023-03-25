@@ -17,7 +17,7 @@ namespace ECommerceApp_Client.ViewModel
     {
         private readonly IMyNavigationService _navigationService;
         private readonly IUserManageService _userManageService;
-        public string Username { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
 
         public LoginViewModel(IMyNavigationService navigationService, IUserManageService userManageService)
         {
@@ -28,12 +28,14 @@ namespace ECommerceApp_Client.ViewModel
         public RelayCommand<object> LoginCommand
         {
             get => new(
-                param =>
+             param =>
                 {
                     try
                     {
                         var password = param as PasswordBox;
-                        var user = _userManageService.GetUser(Username, password.Password);
+                        var user = _userManageService.GetUser(Email, password.Password);
+
+                        _navigationService.NavigateTo<MenStoreViewModel>(user);
 
                         MessageBox.Show($"{user.Email} logged in");
                     }

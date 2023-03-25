@@ -9,9 +9,10 @@ namespace ECommerceApp_Client.Services.Interfaces
 {
     public interface IUserManageService
     {
-        void Add(UserModel user);
-
-        UserModel GetUser(string username, string password);
-        bool CheckExists(string username, string password);
+        public void Authorize(UserModel user);
+        public void Register(UserModel user, string confirm);
+        public bool CheckExists(UserModel user);
+        public UserModel GetUser(string mail, string password);
+        public bool CheckInputs(UserModel user, string confirm);
     }
 }

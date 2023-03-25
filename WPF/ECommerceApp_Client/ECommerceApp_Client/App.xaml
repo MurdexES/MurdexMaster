@@ -14,10 +14,6 @@
             <View:BasketView></View:BasketView>
         </DataTemplate>
 
-        <DataTemplate DataType="{x:Type ViewModel:ProductViewModel}">
-            <View:ProductView></View:ProductView>
-        </DataTemplate>
-
         <DataTemplate DataType="{x:Type ViewModel:LoginViewModel}">
             <View:LoginView></View:LoginView>
         </DataTemplate>
@@ -28,10 +24,6 @@
 
         <DataTemplate DataType="{x:Type ViewModel:AboutUsViewModel}">
             <View:AboutUsView></View:AboutUsView>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type ViewModel:ItemViewModel}">
-            <View:ItemView></View:ItemView>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type ViewModel:MenStoreViewModel}">

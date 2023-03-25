@@ -212,8 +212,8 @@
                        FontFamily="Rubik Medium" 
                        Foreground="#585858"/>
 
-                <TextBox Text="{Binding Username}"
-                         Tag="Enter Username"
+                <TextBox Text="{Binding Email}"
+                         Tag="Enter E-Mail"
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center"
                          Margin="20"
@@ -232,6 +232,7 @@
             <DockPanel Width="500" Grid.ColumnSpan="2" Grid.Row="2">
 
                 <Button Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding ElementName=Password}"
                         Style="{StaticResource RoundedButton}"
                         Height="60"
                         Width="200"

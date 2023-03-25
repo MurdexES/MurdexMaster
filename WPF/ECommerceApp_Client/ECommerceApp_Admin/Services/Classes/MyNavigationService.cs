@@ -51,5 +51,13 @@ namespace ECommerceApp_Admin.Services.Classes
                 ChangeData = data
             });
         }
+
+        public void NavigateDeleteTo<T>(object data) where T : ViewModelBase
+        {
+            _messenger.Send(new DeleteMessage()
+            {
+                DeleteData = data
+            });
+        }
     }
 }

@@ -8,6 +8,8 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime;
@@ -18,19 +20,23 @@ using System.Windows;
 
 namespace ECommerceApp_Admin.ViewModel
 {
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase, INotifyCollectionChanged
     {
         private readonly IMyNavigationService _navigationService;
         private readonly IMessenger _messenger;
         private ViewModelBase _currentViewModel;
 
-        public List<ProductModel> Products { get; set; } = new()
+        private ObservableCollection<ProductModel> _products = new();
+        public ObservableCollection<ProductModel> Products
         {
-            new ProductModel("title", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2)
-        };
+            get { return _products; }
+            set
+            {
+                _products = value;
+            }
+        }
 
-    public ViewModelBase CurrentViewModel
+        public ViewModelBase CurrentViewModel
         {
             get => _currentViewModel;
             set
@@ -38,6 +44,7 @@ namespace ECommerceApp_Admin.ViewModel
                 Set(ref  _currentViewModel, value);
             }
         }
+
         public void ReceiveNavigationMessage(NavigationMessage message)
         {
             CurrentViewModel = App.Container.GetInstance(message.ViewModelType) as ViewModelBase;
@@ -45,7 +52,10 @@ namespace ECommerceApp_Admin.ViewModel
 
         public void ReceiveDataMessage(DataMessage message)
         {
-            Products.Add(message.Data as ProductModel);
+            ProductModel product = message.Data as ProductModel;
+            Products.Add(product);
+            
+            OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, Products));
         }
 
         public void ReceiveChangeMessage(ChangeMessage message)
@@ -69,6 +79,35 @@ namespace ECommerceApp_Admin.ViewModel
             }
         }
 
+        public void ReceiveDeleteMessage(DeleteMessage message)
+        {
+            var data = message.DeleteData as string[];
+            int count = 0;
+
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].Title == data[1])
+                {
+                    if (Products[i].Brand == data[0])
+                    {
+                        Products.RemoveAt(i);
+
+                        OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, Products));
+                        count++;
+                    }
+                }
+            }
+
+            if (count == 0)
+            {
+                MessageBox.Show("There no Product with this title and brand!!");
+            }
+            else if (count >= 1)
+            {
+                _navigationService.NavigateTo<AddViewModel>();
+            }
+        }
+
         public MainViewModel(IMessenger messenger, IMyNavigationService navigationService)
         {
             CurrentViewModel = App.Container.GetInstance<AddViewModel>();
@@ -78,8 +117,19 @@ namespace ECommerceApp_Admin.ViewModel
             _messenger.Register<NavigationMessage>(this, ReceiveNavigationMessage);
             _messenger.Register<DataMessage>(this, ReceiveDataMessage);
             _messenger.Register<ChangeMessage>(this, ReceiveChangeMessage);
+            _messenger.Register<DeleteMessage>(this, ReceiveDeleteMessage);
 
             _navigationService = navigationService;
+        }
+
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        protected void OnCollectionChange(NotifyCollectionChangedEventArgs e)
+        {
+            if ( CollectionChanged != null ) 
+            { 
+                CollectionChanged(this, e);
+            }
         }
 
         public RelayCommand AddCommand

@@ -132,7 +132,7 @@
                 <ListView.View>
                     <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="DoInfo">
                         <GridViewColumn DisplayMemberBinding="{Binding Brand}" Header="Brand" Width="120"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Title" Width="250"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title" Width="250"/>
                     </GridView>
                 </ListView.View>
                 <ListView.ItemContainerStyle>

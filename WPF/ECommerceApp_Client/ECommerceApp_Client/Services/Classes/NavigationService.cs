@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ECommerceApp_Client.Services.Interfaces;
+using ECommerceApp_Client.Model;
 
 namespace ECommerceApp_Client.Services.Classes
 {
@@ -40,6 +41,14 @@ namespace ECommerceApp_Client.Services.Classes
             _messenger.Send(new DataMessages()
             {
                 Data = data
+            });
+        }
+
+        public void NavigateToBasket<T>(ProductModel product) where T : ViewModelBase
+        {
+            _messenger.Send(new BasketMessage() 
+            { 
+                Product = product 
             });
         }
     }

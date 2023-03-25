@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,42 +37,22 @@ namespace ECommerceApp_Client.ViewModel
             _userService = userService;
         }
 
-        public RelayCommand LoginCommand
-        {
-            get => new(
-                () =>
-                {
-                    _navigationService.NavigateTo<LoginViewModel>();
-                });
-        }
-
         public RelayCommand<object> RegisterCommand
         {
             get => new(
-                param =>
+            param =>
+            {
+                if (param != null)
                 {
-                    if (param != null)
-                    {
-                        object[] res = (object[])param;
+                    object[] res = (object[])param;
 
-                        var password = (PasswordBox)res[0];
-                        var confirm = (PasswordBox)res[1];
+                    var password = (PasswordBox)res[0];
+                    var confirm = (PasswordBox)res[1];
 
-                        var checker = new PasswordService(password, confirm);
-
-                        if (checker.IsMatch() && !_userService.CheckExists(User.Username, password.Password))
-                        {
-                            User.Password = password.Password;
-                            User.Confirmation = confirm.Password;
-
-                            _userService.Add(User);
-                        }
-                        else
-                        {
-                            MessageBox.Show("No");
-                        }
-                    }
-                });
+                    User.Password = password.Password.ToString();
+                    _userService.Register(User, confirm.Password.ToString());
+                }
+            });
         }
     }
 }

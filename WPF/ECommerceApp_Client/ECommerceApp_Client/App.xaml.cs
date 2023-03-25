@@ -40,7 +40,6 @@ namespace ECommerceApp_Client
             Container.RegisterSingleton<RegisterViewModel>();
             Container.RegisterSingleton<BasketViewModel>();
             Container.RegisterSingleton<AboutUsViewModel>();
-            Container.RegisterSingleton<ItemViewModel>();
             Container.RegisterSingleton<MenStoreViewModel>();
             Container.RegisterSingleton<WomenStoreViewModel>();
         }

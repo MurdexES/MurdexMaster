@@ -55,19 +55,6 @@ namespace ECommerceApp_Client.Model
             set
             {
                 _category = value;
-
-                if (value == Categories.Sneakers)
-                {
-                    CategorySelect = 1;
-                }
-                else if (value == Categories.Running)
-                {
-                    CategorySelect = 2;
-                }
-                else if (value == Categories.Basketball)
-                {
-                    CategorySelect = 3;
-                }
             }
         }
 

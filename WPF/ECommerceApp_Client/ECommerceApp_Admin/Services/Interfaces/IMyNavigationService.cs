@@ -12,5 +12,6 @@ namespace ECommerceApp_Admin.Services.Interfaces
         public void NavigateTo<T>(object? data = null) where T : ViewModelBase;
         public void NavigateDataTo<T>(object data) where T : ViewModelBase;
         public void NavigateChangeTo<T>(object data) where T : ViewModelBase;
+        public void NavigateDeleteTo<T>(object data) where T : ViewModelBase;
     }
 }
