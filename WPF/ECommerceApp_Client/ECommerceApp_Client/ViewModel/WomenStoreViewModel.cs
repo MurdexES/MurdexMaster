@@ -58,7 +58,8 @@ namespace ECommerceApp_Client.ViewModel
                 {
                     if (Products[i].Title == title)
                     {
-                        _myNavigationService.NavigateDataTo<BasketViewModel>(Products[i]);
+                        _myNavigationService.NavigateToBasket<BasketViewModel>(Products[i]);
+
                         MessageBox.Show($"{title} is Added To Cart", "Cart Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }

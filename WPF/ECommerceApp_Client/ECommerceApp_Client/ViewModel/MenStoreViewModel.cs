@@ -21,22 +21,6 @@ namespace ECommerceApp_Client.ViewModel
     public class MenStoreViewModel : ViewModelBase, INotifyPropertyChanged, INotifyCollectionChanged
     {
         public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
-        //{
-        //    new ProductModel("title", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("ti", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("titlei", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("titleiii", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("titleiiii", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("tiiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-        //    new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
-        //    new ProductModel("t", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2)
-        //};
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
