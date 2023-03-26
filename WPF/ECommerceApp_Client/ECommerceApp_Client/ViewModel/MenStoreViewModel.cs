@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ECommerceApp_Client.ViewModel
 {
@@ -20,32 +21,21 @@ namespace ECommerceApp_Client.ViewModel
     {
         public ObservableCollection<ProductModel> Products { get; set; } = new()
         {
-            new ProductModel("title", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("ti", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tiii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titlei", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tiiii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleii", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tiiiii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleiii", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tiiiiiiiii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleiiii", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("tiiiiiiiiii", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleii", 14.99f, "description", 5, "brand", "productImage", 2),
-            new ProductModel("t", 14.99f, "descdfdfription", 5, "brafdfdnd", "producfdftImage", 2)
+            new ProductModel("title", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("ti", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("titlei", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("titleiii", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("titleiiii", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("tiiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+            new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
+            new ProductModel("t", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2)
         };
-
-        private int _basketNumber;
-        public int BasketNumber
-        {
-            get { return _basketNumber; }
-            set
-            {
-                _basketNumber = value;
-                OnPropertyChange(nameof(BasketNumber));
-            }
-        }
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
@@ -74,7 +64,7 @@ namespace ECommerceApp_Client.ViewModel
                     if (Products[i].Title == title)
                     {
                         _myNavigationService.NavigateToBasket<BasketViewModel>(Products[i]);
-                        BasketNumber++;
+                        MessageBox.Show($"{title} is Added To Cart", "Cart Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
             });

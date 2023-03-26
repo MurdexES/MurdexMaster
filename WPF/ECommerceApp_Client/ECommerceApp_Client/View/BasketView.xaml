@@ -57,18 +57,18 @@
 
                                                 <Ellipse Height="80" Width="80" Margin="25 10 0 10" HorizontalAlignment="Left">
                                                     <Ellipse.Fill>
-                                                        <ImageBrush ImageSource="{Binding Product.ProductImage}"/>
+                                                        <ImageBrush ImageSource="{Binding ProductImage}"/>
                                                     </Ellipse.Fill>
                                                 </Ellipse>
 
-                                                <TextBlock Grid.Column="1" Text="{Binding Product.Title}" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center"/>
-                                                <TextBlock Grid.Column="1" Text="{Binding Product.Description}" Foreground="#909090" FontSize="11" VerticalAlignment="Center" Margin="0 38 0 0"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Column="1" Text="{Binding Description}" Foreground="#909090" FontSize="11" VerticalAlignment="Center" Margin="0 38 0 0"/>
 
-                                                <TextBlock Grid.Column="2" Text="{Binding Product.Brand}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+                                                <TextBlock Grid.Column="2" Text="{Binding Brand}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
 
-                                                <TextBlock Grid.Column="3" Text="{Binding Product.Quantity}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+                                                <TextBlock Grid.Column="3" Text="{Binding Quantity}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
 
-                                                <TextBlock Grid.Column="5" Text="{Binding Product.Price}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
+                                                <TextBlock Grid.Column="5" Text="{Binding Price}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
                                                 <TextBlock Grid.Column="6" Text="USD" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="14"/>
 
                                                 <Button Style="{StaticResource buttonDelete}" 

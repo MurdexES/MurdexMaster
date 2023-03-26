@@ -19,16 +19,7 @@ namespace ECommerceApp_Client.ViewModel
         private readonly IMessenger _messenger;
         private readonly IMyNavigationService _navigationService;
         private ViewModelBase _currentViewModel;
-        //private UserModel _currentUser;
-
-        //public UserModel CurrentUser
-        //{
-        //    get => _currentUser;
-        //    set
-        //    {
-        //        Set(ref _currentUser, value);
-        //    }
-        //}
+        
         public ViewModelBase CurrentViewModel
         {
             get => _currentViewModel;

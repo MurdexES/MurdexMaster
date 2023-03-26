@@ -41,7 +41,23 @@ namespace ECommerceApp_Client.ViewModel
 
         public void ReceiveBasketMessage(BasketMessage message)
         {
-            AddToBasket(message.Product);
+            bool key = false;
+
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].Title == message.Product.Title)
+                {
+                    Products[i].Quantity++;
+                    Total += message.Product.Price;
+
+                    key = true;
+                }
+            }
+
+            if (key == false)
+            {
+                AddToBasket(message.Product);
+            }
         }
 
         public BasketViewModel(IMessenger messenger, ISerializeService serializeService)
@@ -81,16 +97,16 @@ namespace ECommerceApp_Client.ViewModel
         {
             get => new(title =>
             {
-                for (int i = 0; i < Products.Count; i++)
+                int i = 0;
+                while (Products[i].Title != title)
                 {
-                    if (Products[i] == title)
-                    {
-                        Products.RemoveAt(i);
-                        Total -= Products[i].Price;
-                        
-                        OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, Products));
-                    }
+                    i++;
                 }
+
+                Total -= (Products[i].Price * Products[i].Quantity);
+                Products[i].Quantity = 1;
+
+                Products.RemoveAt(i);
             });
         }
 
