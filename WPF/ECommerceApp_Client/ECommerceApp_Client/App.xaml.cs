@@ -23,8 +23,17 @@ namespace ECommerceApp_Client
 
         protected override void OnStartup(StartupEventArgs e)
         {
+
             Register();
+
+            var menStore = App.Container.GetInstance<MenStoreViewModel>();
+            menStore.MenStoreStartUp();
+
+            var womenStore = App.Container.GetInstance<WomenStoreViewModel>();
+            womenStore.WomenStoreStartUp();
+
             MainStartup();
+            
         }
 
         private void Register()

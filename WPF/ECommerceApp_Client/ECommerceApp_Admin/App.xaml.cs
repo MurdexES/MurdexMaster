@@ -24,7 +24,18 @@ namespace ECommerceApp_Admin
         protected override void OnStartup(StartupEventArgs e)
         {
             Register();
+
+            var mainViewModel = App.Container.GetInstance<MainViewModel>();
+            mainViewModel.MainOpen();
+
             MainStartup();
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            var mainViewModel = App.Container.GetInstance<MainViewModel>();
+            mainViewModel.MainClose();
+            base.OnExit(e);
         }
 
         private void Register()

@@ -20,6 +20,7 @@ namespace ECommerceApp_Admin.Model
         public string Description { get; set; }
         public int Quantity { get; set; }
         public string Brand { get; set; }
+        public bool IsMale { get; set; }
         public string ProductImage { get; set; }
 
         private int _categorySelect;

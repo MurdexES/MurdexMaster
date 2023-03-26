@@ -9,8 +9,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity.ModelConfiguration.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -18,7 +20,7 @@ namespace ECommerceApp_Client.ViewModel
 {
     public class WomenStoreViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public ObservableCollection<ProductModel> Products { get; set; } = new();
+        public ObservableCollection<ProductModel> Products { get; set; }
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
@@ -36,6 +38,16 @@ namespace ECommerceApp_Client.ViewModel
         protected void OnPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void WomenStoreStartUp()
+        {
+            using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.Open, FileAccess.Read);
+            using StreamReader sr = new(fs);
+
+            fs.Position = 0;
+
+            Products = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr.ReadToEnd());
         }
 
         public RelayCommand<object> AddCommand

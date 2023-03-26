@@ -10,10 +10,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +26,7 @@ namespace ECommerceApp_Admin.ViewModel
     {
         private readonly IMyNavigationService _navigationService;
         private readonly IMessenger _messenger;
+
         private ViewModelBase _currentViewModel;
 
         private ObservableCollection<ProductModel> _products = new();
@@ -33,6 +36,27 @@ namespace ECommerceApp_Admin.ViewModel
             set
             {
                 _products = value;
+            }
+        }
+
+        //Gender Lists
+        private ObservableCollection<ProductModel> _productsMale = new();
+        public ObservableCollection<ProductModel> ProductsMale
+        {
+            get { return _productsMale; }
+            set
+            {
+                _productsMale = value;
+            }
+        }
+
+        private ObservableCollection<ProductModel> _productsFemale = new();
+        public ObservableCollection<ProductModel> ProductsFemale
+        {
+            get { return _productsFemale; }
+            set
+            {
+                _productsFemale = value;
             }
         }
 
@@ -54,8 +78,6 @@ namespace ECommerceApp_Admin.ViewModel
         {
             ProductModel product = message.Data as ProductModel;
             Products.Add(product);
-            
-            OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, Products));
         }
 
         public void ReceiveChangeMessage(ChangeMessage message)
@@ -113,13 +135,12 @@ namespace ECommerceApp_Admin.ViewModel
             CurrentViewModel = App.Container.GetInstance<AddViewModel>();
 
             _messenger = messenger;
+            _navigationService = navigationService;
 
             _messenger.Register<NavigationMessage>(this, ReceiveNavigationMessage);
             _messenger.Register<DataMessage>(this, ReceiveDataMessage);
             _messenger.Register<ChangeMessage>(this, ReceiveChangeMessage);
             _messenger.Register<DeleteMessage>(this, ReceiveDeleteMessage);
-
-            _navigationService = navigationService;
         }
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
@@ -130,6 +151,70 @@ namespace ECommerceApp_Admin.ViewModel
             { 
                 CollectionChanged(this, e);
             }
+        }
+
+        public void MainOpen()
+        {
+            using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.OpenOrCreate, FileAccess.Read);
+            using StreamReader sr = new(fs);
+
+            fs.Position = 0;
+            if (sr.ReadToEnd() != string.Empty)
+            {
+                fs.Position = 0;
+                ProductsMale = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr.ReadToEnd());
+            }
+
+            using FileStream fs1 = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.OpenOrCreate, FileAccess.Read);
+            using StreamReader sr1 = new(fs1);
+
+            fs1.Position = 0;
+
+            if (sr1.ReadToEnd() != string.Empty)
+            {
+                fs1.Position = 0;
+                ProductsFemale = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr1.ReadToEnd());
+            }
+
+            for (int i = 0; i < ProductsMale.Count; i++)
+            {
+                Products.Add(ProductsMale[i]);
+            }
+
+            for (int i = 0; i < ProductsFemale.Count; i++)
+            {
+                Products.Add(ProductsFemale[i]);
+            }
+        }
+
+        public void MainClose()
+        {
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].IsMale == true)
+                {
+                    ProductsMale.Add(Products[i]);
+                }
+                else if (Products[i].IsMale == false) 
+                {
+                    ProductsFemale.Add(Products[i]);
+                }
+            }
+            
+            using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.Truncate, FileAccess.Write);
+            using StreamWriter sw = new(fs);
+
+            var male_json = JsonSerializer.Serialize(ProductsMale);
+
+            sw.Write(male_json);
+
+            
+            using FileStream fs2 = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.Truncate, FileAccess.Write);
+            using StreamWriter sw2 = new(fs2);
+
+            var female_json = JsonSerializer.Serialize(ProductsFemale);
+
+            sw2.Write(female_json);
         }
 
         public RelayCommand AddCommand

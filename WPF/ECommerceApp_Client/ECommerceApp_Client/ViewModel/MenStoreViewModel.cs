@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -17,25 +18,25 @@ using System.Windows;
 
 namespace ECommerceApp_Client.ViewModel
 {
-    public class MenStoreViewModel : ViewModelBase, INotifyPropertyChanged
+    public class MenStoreViewModel : ViewModelBase, INotifyPropertyChanged, INotifyCollectionChanged
     {
-        public ObservableCollection<ProductModel> Products { get; set; } = new()
-        {
-            new ProductModel("title", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("ti", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titlei", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleiii", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleiiii", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("tiiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
-            new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
-            new ProductModel("t", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2)
-        };
+        public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
+        //{
+        //    new ProductModel("title", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("ti", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("titlei", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("titleiii", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("titleiiii", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("tiiiiiiiiii", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2),
+        //    new ProductModel("titleii", 14.99f, "description", 1, "brand", "productImage", 2),
+        //    new ProductModel("t", 14.99f, "descdfdfription", 1, "brafdfdnd", "producfdftImage", 2)
+        //};
 
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;
@@ -55,6 +56,26 @@ namespace ECommerceApp_Client.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+
+        protected void OnCollectionChange(NotifyCollectionChangedEventArgs e)
+        {
+            if (CollectionChanged != null)
+            {
+                CollectionChanged(this, e);
+            }
+        }
+
+        public void MenStoreStartUp()
+        {
+            using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.Open, FileAccess.Read);
+            using StreamReader sr = new(fs);
+            
+            fs.Position = 0;
+            
+            Products = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr.ReadToEnd());
+        }
+
         public RelayCommand<object> AddCommand
         {
             get => new(title =>
@@ -64,6 +85,7 @@ namespace ECommerceApp_Client.ViewModel
                     if (Products[i].Title == title)
                     {
                         _myNavigationService.NavigateToBasket<BasketViewModel>(Products[i]);
+
                         MessageBox.Show($"{title} is Added To Cart", "Cart Info", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
