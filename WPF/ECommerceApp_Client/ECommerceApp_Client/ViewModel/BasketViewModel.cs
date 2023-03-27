@@ -34,7 +34,15 @@ namespace ECommerceApp_Client.ViewModel
 
         public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
         
-        public CardModel Card { get; set; } = new();
+        private CardModel _card = new CardModel();
+        public CardModel Card
+        {
+            get { return _card; }
+            set
+            {
+                _card = value;
+            }
+        }
         
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;  
@@ -140,11 +148,14 @@ namespace ECommerceApp_Client.ViewModel
             {
                 if (Products.Count >= 1 && Card != null && Total != 0 && Products != null)
                 {
-                    var json = _serializeService.Serialize<ObservableCollection<ProductModel>>(Products);
+                    if (Card.CardNumber != string.Empty && Card.CardCVV != string.Empty && Card.CardExpireDate != null)
+                    {
+                        var json = _serializeService.Serialize<ObservableCollection<ProductModel>>(Products);
 
-                    using FileStream fs = new("basket_data.json", FileMode.OpenOrCreate);
-                    using StreamWriter sw = new(fs);
-                    sw.Write(json);
+                        using FileStream fs = new("basket_data.json", FileMode.OpenOrCreate);
+                        using StreamWriter sw = new(fs);
+                        sw.Write(json);
+                    }
 
                     MessageBox.Show("We sent Check to your Email address.","Checkout Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
