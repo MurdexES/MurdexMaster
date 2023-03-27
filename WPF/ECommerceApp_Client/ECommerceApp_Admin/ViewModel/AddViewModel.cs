@@ -61,8 +61,15 @@ namespace ECommerceApp_Admin.ViewModel
         {
             get => new(() =>
             {
-                _navigationService.NavigateDataTo<MainViewModel>(Product);
-                Product = new ProductModel();
+                if (Product.Title != "" && Product.Brand != "" && Product.Description != "" && Product.Price != 0 && Product.ProductImage != null)
+                {
+                    _navigationService.NavigateDataTo<MainViewModel>(Product);
+                    Product = new ProductModel();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Product Details", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             });
         }
 

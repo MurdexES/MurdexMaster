@@ -27,6 +27,9 @@ namespace ECommerceApp_Admin.ViewModel
         private readonly IMyNavigationService _navigationService;
         private readonly IMessenger _messenger;
 
+        private string jsonGlobal_male;
+        private string jsonGlobal_female;
+
         private ViewModelBase _currentViewModel;
 
         private ObservableCollection<ProductModel> _products = new();
@@ -77,7 +80,24 @@ namespace ECommerceApp_Admin.ViewModel
         public void ReceiveDataMessage(DataMessage message)
         {
             ProductModel product = message.Data as ProductModel;
-            Products.Add(product);
+
+            int count = 0;
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].Title == product.Title)
+                {
+                    count++;
+                }
+            }
+
+            if (count == 0)
+            {
+                Products.Add(product);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Product Details", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public void ReceiveChangeMessage(ChangeMessage message)
@@ -158,14 +178,15 @@ namespace ECommerceApp_Admin.ViewModel
             using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.OpenOrCreate, FileAccess.Read);
             using StreamReader sr = new(fs);
 
-            fs.Position = 0;
             if (sr.ReadToEnd() != string.Empty)
             {
                 fs.Position = 0;
                 ProductsMale = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr.ReadToEnd());
+
+                jsonGlobal_male = JsonSerializer.Serialize(ProductsMale);
             }
 
-            using FileStream fs1 = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.OpenOrCreate, FileAccess.Read);
+            using FileStream fs1 = new(Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.OpenOrCreate, FileAccess.Read);
             using StreamReader sr1 = new(fs1);
 
             fs1.Position = 0;
@@ -174,6 +195,8 @@ namespace ECommerceApp_Admin.ViewModel
             {
                 fs1.Position = 0;
                 ProductsFemale = JsonSerializer.Deserialize<ObservableCollection<ProductModel>>(sr1.ReadToEnd());
+
+                jsonGlobal_female = JsonSerializer.Serialize(ProductsFemale);
             }
 
             for (int i = 0; i < ProductsMale.Count; i++)
@@ -188,7 +211,7 @@ namespace ECommerceApp_Admin.ViewModel
         }
 
         public void MainClose()
-        {
+        { 
             for (int i = 0; i < Products.Count; i++)
             {
                 if (Products[i].IsMale == true)
@@ -200,21 +223,26 @@ namespace ECommerceApp_Admin.ViewModel
                     ProductsFemale.Add(Products[i]);
                 }
             }
-            
-            using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.Truncate, FileAccess.Write);
-            using StreamWriter sw = new(fs);
 
             var male_json = JsonSerializer.Serialize(ProductsMale);
-
-            sw.Write(male_json);
-
             
-            using FileStream fs2 = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.Truncate, FileAccess.Write);
-            using StreamWriter sw2 = new(fs2);
+            if (jsonGlobal_male != male_json)
+            {
+                using FileStream fs = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\male_products.json", FileMode.OpenOrCreate, FileAccess.Write);
+                using StreamWriter sw = new(fs);
+
+                sw.Write(male_json);
+            }
 
             var female_json = JsonSerializer.Serialize(ProductsFemale);
 
-            sw2.Write(female_json);
+            if (jsonGlobal_female != female_json)
+            {
+                using FileStream fs2 = new(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString()).ToString()).ToString() + "\\female_products.json", FileMode.OpenOrCreate, FileAccess.Write);
+                using StreamWriter sw2 = new(fs2);
+
+                sw2.Write(female_json);
+            }
         }
 
         public RelayCommand AddCommand

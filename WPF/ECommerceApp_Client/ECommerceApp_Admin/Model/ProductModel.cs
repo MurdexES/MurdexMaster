@@ -31,17 +31,19 @@ namespace ECommerceApp_Admin.Model
             {
                 _categorySelect = value;
 
-                if (value == 1)
+                switch (value)
                 {
-                    Category = Categories.Sneakers;
-                }
-                else if (value == 2)
-                {
-                    Category = Categories.Running;
-                }
-                else if (value == 3)
-                {
-                    Category = Categories.Basketball;
+                    case 1:
+                        Category = Categories.Sneakers;
+                        break;
+                    case 2:
+                        Category = Categories.Running;
+                        break;
+                    case 3:
+                        Category = Categories.Basketball;
+                        break;
+                    default:
+                        break;
                 }
             }
         }
