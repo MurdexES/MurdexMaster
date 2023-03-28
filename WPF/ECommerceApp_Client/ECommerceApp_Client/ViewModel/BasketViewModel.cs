@@ -33,16 +33,8 @@ namespace ECommerceApp_Client.ViewModel
         }
 
         public ObservableCollection<ProductModel> Products { get; set; } = new ObservableCollection<ProductModel>();
-        
-        private CardModel _card = new CardModel();
-        public CardModel Card
-        {
-            get { return _card; }
-            set
-            {
-                _card = value;
-            }
-        }
+
+        public CardModel Card { get; set; } = new();
         
         private readonly IMessenger _messenger;
         private readonly ISerializeService _serializeService;  
@@ -142,26 +134,87 @@ namespace ECommerceApp_Client.ViewModel
             });
         }
 
+        public RelayCommand<object> IncreaseCommand
+        {
+            get => new(title =>
+            {
+                int i = 0;
+                while (Products[i].Title != title)
+                {
+                    i++;
+                }
+
+                Total += Products[i].Price;
+                Products[i].Quantity += 1;
+
+                OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, Products));
+            });
+        }
+
+        public RelayCommand<object> DecreaseCommand
+        {
+            get => new(title =>
+            {
+                int i = 0;
+                while (Products[i].Title != title)
+                {
+                    i++;
+                }
+
+                if (Products[i].Quantity > 0)
+                {
+                    Total -= Products[i].Price;
+                    Products[i].Quantity -= 1;
+
+                    OnCollectionChange(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, Products));
+                }
+                else if (Products[i].Quantity == 1)
+                {
+                    Total -= Products[i].Price;
+                    
+                    Products.RemoveAt(i);
+                }
+            });
+        }
+
         public RelayCommand CheckoutCommand
         {
             get => new(() =>
             {
-                if (Products.Count >= 1 && Card != null && Total != 0 && Products != null)
+                if (Products.Count >= 1 && Card != null && Total != 0 && Products != null && Card.CardNumber != null && Card.CardCVV != null)
                 {
-                    if (Card.CardNumber != string.Empty && Card.CardCVV != string.Empty && Card.CardExpireDate != null)
+                    if (Card.CardNumber.Length == 16)
                     {
-                        var json = _serializeService.Serialize<ObservableCollection<ProductModel>>(Products);
+                        if (Card.CardCVV.Length == 3)
+                        {
+                            if (Card.CardExpireDate.Date != null)
+                            {
+                                MessageBox.Show("We sent Check to your Email address.", "Checkout Info", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        using FileStream fs = new("basket_data.json", FileMode.OpenOrCreate);
-                        using StreamWriter sw = new(fs);
-                        sw.Write(json);
+                                var json = _serializeService.Serialize<ObservableCollection<ProductModel>>(Products);
+
+                                using FileStream fs = new("basket_data.json", FileMode.OpenOrCreate);
+                                using StreamWriter sw = new(fs);
+                                sw.Write(json);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Card ExpireDate is Wrong", "Checkout Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Card CVV is Wrong", "Checkout Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
-
-                    MessageBox.Show("We sent Check to your Email address.","Checkout Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    else
+                    {
+                        MessageBox.Show("Card Number is Wrong", "Checkout Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("There`re nothing in the Basket to Checkout! Add something to Basket.", "Checkout Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("There`re nothing in the Basket to Checkout or There some missing card info! Add something to Basket.", "Checkout Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             });
         }

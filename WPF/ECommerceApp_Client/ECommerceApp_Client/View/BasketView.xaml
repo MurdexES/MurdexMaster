@@ -30,7 +30,6 @@
 
                 <!--Title-->
                 <StackPanel Orientation="Horizontal" Margin="0 40 0 30">
-                    <TextBlock Text="{Binding User}" FontSize="28" FontWeight="SemiBold" FontFamily="Trebuchet MS" VerticalAlignment="Center" Margin="50 0 0 0"/>
                     <Rectangle VerticalAlignment="Stretch" Fill="#808080" Width="0.7" Margin="20 5 20 5"/>
                     <TextBlock Text="Your Shopping Cart" FontSize="26" VerticalAlignment="Center"/>
                 </StackPanel>
@@ -70,6 +69,20 @@
 
                                                 <TextBlock Grid.Column="5" Text="{Binding Price}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="16"/>
                                                 <TextBlock Grid.Column="6" Text="USD" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="14"/>
+
+                                                <StackPanel Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                                    <Button Command="{Binding Path=DataContext.IncreaseCommand, ElementName=BasketControl}"
+                                                            CommandParameter="{Binding Title}"
+                                                            Style="{StaticResource buttonCounter}">
+                                                        <Image Source="Assets/BasketAssets/add.png"/>
+                                                    </Button>
+
+                                                    <Button Command="{Binding Path=DataContext.DecreaseCommand, ElementName=BasketControl}" 
+                                                            CommandParameter="{Binding Title}"
+                                                            Style="{StaticResource buttonCounter}" Margin="0 5 0 0">
+                                                        <Image Source="Assets/BasketAssets/low.png"/>
+                                                    </Button>
+                                                </StackPanel>
 
                                                 <Button Style="{StaticResource buttonDelete}" 
                                                         Grid.Column="7"

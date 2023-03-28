@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,23 @@ namespace ECommerceApp_Client.Model
         Running,
         Basketball,
     }
-    public class ProductModel
+    public class ProductModel : INotifyPropertyChanged
     {
         public string Title { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
-        public int Quantity { get; set; } = 1;
+
+        private int _quantity = 1;
+        public int Quantity
+        {
+            get { return _quantity; }
+            set
+            {
+                _quantity = value;
+                OnPropertyChange(nameof(Quantity));
+            }
+        }
+
         public string Brand { get; set; }
         public bool IsMale { get; set; }
         public string ProductImage { get; set; }
@@ -69,6 +81,13 @@ namespace ECommerceApp_Client.Model
             Brand = brand;
             ProductImage = productImage;
             CategorySelect = categorySelect;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
