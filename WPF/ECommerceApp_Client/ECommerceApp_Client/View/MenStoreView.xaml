@@ -69,16 +69,17 @@
                                             <Image Grid.Row="0" Source="{Binding ProductImage}" Stretch="Fill"/>
 
                                             <Button Grid.Row="0"
-                                                    Height="100"
-                                                    Width="100"
+                                                    Height="50"
+                                                    Width="60"
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Bottom"
+                                                    Style="{DynamicResource buttonBack}"
                                                     Command="{Binding Path=DataContext.AddCommand, ElementName=MenStoreControl}"
                                                     CommandParameter="{Binding Title}"
                                                     Background="Transparent">
                                                 <Border Margin="2"
-                                                        Height="80"
-                                                        Width="80"
+                                                        Height="30"
+                                                        Width="30"
                                                         Style="{StaticResource Product_Button}">
                                                     <Image Source="Assets/BasketAssets/add.png"/>
                                                 </Border>
