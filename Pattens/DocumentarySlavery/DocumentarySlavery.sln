@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentarySlavery", "DocumentarySlavery\DocumentarySlavery.csproj", "{DECA4401-0339-44FA-9B0F-2016B491378C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DECA4401-0339-44FA-9B0F-2016B491378C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECA4401-0339-44FA-9B0F-2016B491378C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECA4401-0339-44FA-9B0F-2016B491378C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECA4401-0339-44FA-9B0F-2016B491378C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4566893-E30B-4458-A9A6-1D36D57F092E}
+	EndGlobalSection
+EndGlobal
