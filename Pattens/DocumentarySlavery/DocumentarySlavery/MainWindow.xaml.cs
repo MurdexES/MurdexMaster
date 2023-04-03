@@ -47,6 +47,11 @@ namespace DocumentarySlavery
                 Documents[0].Name = NameTB.Text;
                 Documents[0].Text = TextTB.Text;
                 Documents[0].FontSize = Convert.ToInt32(FontSizeTB.Text);
+
+                for (int i = 0; i < Documents.Count; i++)
+                {
+                    Documents[i] = Documents[0].Clone() as Document;
+                }
             }
             else
             {
