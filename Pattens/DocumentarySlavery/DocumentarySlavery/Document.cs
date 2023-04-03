@@ -11,7 +11,6 @@ namespace DocumentarySlavery
         public string Name { get; set; }
         public string Text { get; set; }
         public int FontSize { get; set; }
-
         public Document() { }
         public Document(string name, string text, int fontsize) 
         {
@@ -24,7 +23,7 @@ namespace DocumentarySlavery
         {
             Name = this.Name,
             Text = this.Text,
-            FontSize = this.FontSize
+            FontSize = this.FontSize,
         };
     }
 }
