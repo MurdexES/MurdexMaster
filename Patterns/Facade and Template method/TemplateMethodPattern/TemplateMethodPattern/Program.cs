@@ -1,77 +1,91 @@
 ﻿using System;
 
-public abstract class DataImporter
+Console.WriteLine("");
+
+Car sportsCar = new SportsCar();
+sportsCar.CreateCar();
+
+Console.WriteLine("");
+
+Car coupeCar = new CoupeCar();
+coupeCar.CreateCar();
+
+Console.WriteLine("");
+
+Car muscleCar = new MuscleCar();
+muscleCar.CreateCar();
+
+
+public abstract class Car
 {
-    public void ImportData()
+    public void CreateCar()
     {
-        OpenFile();
-        ParseFile();
-        TransformData();
-        LoadData();
-        Console.WriteLine("Data imported successfully!");
+        InstallEngine();
+        InstallWheels();
+        PaintCar();
+        Console.WriteLine("Car is complete!");
     }
 
-    protected abstract void OpenFile();
+    public abstract void InstallEngine();
 
-    protected abstract void ParseFile();
+    public abstract void InstallWheels();
 
-    protected virtual void TransformData()
+    public virtual void PaintCar()
     {
-        Console.WriteLine("Data transformation is not required for this file format.");
-    }
-
-    protected abstract void LoadData();
-}
-
-public class CSVDataImporter : DataImporter
-{
-    protected override void OpenFile()
-    {
-        Console.WriteLine("Opening CSV file...");
-    }
-
-    protected override void ParseFile()
-    {
-        Console.WriteLine("Parsing CSV file...");
-    }
-
-    protected override void LoadData()
-    {
-        Console.WriteLine("Loading data into database...");
+        Console.WriteLine("Car is Painted");
     }
 }
 
-public class XMLDataImporter : DataImporter
+public class SportsCar : Car
 {
-    protected override void OpenFile()
+    public override void InstallEngine()
     {
-        Console.WriteLine("Opening XML file...");
+        Console.WriteLine("Installing a sports car engine");
     }
 
-    protected override void ParseFile()
+    public override void InstallWheels()
     {
-        Console.WriteLine("Parsing XML file...");
+        Console.WriteLine("Installing sports car wheels");
     }
 
-    protected override void TransformData()
+    public override void PaintCar()
     {
-        Console.WriteLine("Transforming XML data into CSV format...");
-    }
-
-    protected override void LoadData()
-    {
-        Console.WriteLine("Loading data into database...");
+        Console.WriteLine("Painting the sports car with a sportic color");
     }
 }
 
-class Program
+public class CoupeCar : Car
 {
-    static void Main(string[] args)
+    public override void InstallEngine()
     {
-        DataImporter importer = new CSVDataImporter();
-        importer.ImportData();
+        Console.WriteLine("Installed a coupe car engine");
+    }
 
-        importer = new XMLDataImporter();
-        importer.ImportData();
+    public override void InstallWheels()
+    {
+        Console.WriteLine("Installed coupe car wheels");
+    }
+
+    public override void PaintCar()
+    {
+        Console.WriteLine("Painted the coupe car");
+    }
+}
+
+public class MuscleCar : Car
+{
+    public override void InstallEngine()
+    {
+        Console.WriteLine("Installed a muscle car engine");
+    }
+
+    public override void InstallWheels()
+    {
+        Console.WriteLine("Installed muscle car wheels");
+    }
+
+    public override void PaintCar()
+    {
+        Console.WriteLine("Painted the muscle car in classic color");
     }
 }
