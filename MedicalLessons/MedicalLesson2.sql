@@ -67,4 +67,3 @@ select Name from Wards where Places = (select min(Places) from Wards)
 
 --9
 select d.Building, SUM(w.Places) as TotalPlaces from Department d inner join Wards w on d.Id = w.DepartmentId where d.Building in (1, 6, 7, 8) group by d.Building having SUM(w.Places) > 100 and COUNT(case when w.Places > 10 then 1 else null end) > 0
-
