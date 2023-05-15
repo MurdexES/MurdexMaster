@@ -119,7 +119,7 @@ group by Name having Count(GroupsCurators.CuratorId) > 1
 select Groups.Name
 from Groups
 inner join GroupsStudents on Groups.Id = GroupsStudents.GroupId
-inner join Students ON GroupsStudents.StudentId = Students.Id
+inner join Students on GroupsStudents.StudentId = Students.Id
 inner join (
     select GroupsStudents.GroupId, AVG(Students.Rating) as AvgRating
     from Students
@@ -128,7 +128,7 @@ inner join (
 ) as gs ON Groups.Id = gs.GroupId
 inner join (
     select min(Students.Rating) as MinRating
-    FROM Students
+    from Students
     inner join GroupsStudents on Students.Id = GroupsStudents.StudentId
     inner join Groups on GroupsStudents.GroupId = Groups.Id
     where Groups.Year = 5
