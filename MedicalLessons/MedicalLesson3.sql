@@ -1,6 +1,6 @@
 use [MedicalDB]
 
-CREATE TABLE Department
+create table Department
 (
   Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
   Building int NOT NULL CHECK (Building >= 1 AND Building <= 5),
@@ -14,7 +14,7 @@ create table Diseases
   Name nvarchar(100) not null check (Name <> '') unique
 );
 
-CREATE TABLE Doctors
+create table Doctors
 (
   Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY ,
   Name NVARCHAR(MAX) NOT NULL CHECK (Name <> ''),
@@ -22,7 +22,7 @@ CREATE TABLE Doctors
   Surname NVARCHAR(MAX) NOT NULL CHECK (Surname <> '')
 );
 
-CREATE TABLE DoctorsExaminations
+create table DoctorsExaminations
 (
   Id INT IDENTITY (1,1) NOT NULL PRIMARY KEY ,
   DoctorId INT NOT NULL FOREIGN KEY REFERENCES Doctors([Id]),
@@ -32,13 +32,13 @@ CREATE TABLE DoctorsExaminations
   Date date not null,
 );
 
-CREATE TABLE Examinations
+create table Examinations
 (
   Id INT IDENTITY (1,1) NOT NULL PRIMARY KEY ,
   Name NVARCHAR(100) NOT NULL CHECK (Name <> '') UNIQUE
 );
 
-CREATE TABLE Wards
+create table Wards
 (
   Id INT IDENTITY (1,1) NOT NULL PRIMARY KEY ,
   Name NVARCHAR(20) NOT NULL CHECK (Name <> '') UNIQUE,
