@@ -59,21 +59,48 @@ create table Professors
 );
 
 --1
-select Wards.Name, Wards.Places from Wards
-inner join Department on Wards.DepartmentId = Department.Id
-where Building = 5 and Wards.Places >= 5 and
-exist(
-    select 1 from Wards
-    where Building = 5 and Wards.Places >= 15
-)
+select Wards.Name, Places
+from Wards
+join Department on Wards.DepartmentId = Department.Id
+where Department.Building = 5 and Wards.Places >= 5
+and EXISTS (
+  select 1
+  from Wards
+  where DepartmentId = Department.Id and Places > 15
+);
 
 --2
-
+select distinct Department.Name
+from Department
+join Wards on Department.Id = Wards.DepartmentId
+join DoctorsExaminations on Wards.Id = DoctorsExaminations.WardId
+join Examinations on DoctorsExaminations.ExaminationId = Examinations.Id
+where DoctorsExaminations.Date >= DATEADD(week, -1, GETDATE());
 
 --3
-
+select Diseases.Name
+FROM Diseases
+where not EXISTS (
+  select 1
+  from DoctorsExaminations
+  where DoctorsExaminations.DiseaseId = Diseases.Id
+);
 
 --4
-
+select Doctors.Name, Doctors.Surname
+from Doctors
+where not EXISTS (
+  select 1
+  from DoctorsExaminations
+  where DoctorsExaminations.DoctorId = Doctors.Id
+);
 
 --5
+select Department.Name
+from Department
+where not EXISTS (
+  select 1
+  from Wards
+  inner join DoctorsExaminations on Wards.Id = DoctorsExaminations.WardId
+  WHERE Wards.DepartmentId = Department.Id
+);
