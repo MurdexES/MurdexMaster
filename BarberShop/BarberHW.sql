@@ -11,7 +11,6 @@ CREATE TABLE Barbers (
   Position NVARCHAR(20) NOT NULL
 );
 
--- Создание таблицы "Services"
 CREATE TABLE Services (
   ServiceId INT IDENTITY (1,1) PRIMARY KEY,
   BarberId INT FOREIGN KEY REFERENCES Barbers(BarberId),
@@ -20,7 +19,6 @@ CREATE TABLE Services (
   DurationMinutes INT NOT NULL
 );
 
--- Создание таблицы "Feedbacks"
 CREATE TABLE Feedbacks (
   FeedbackId INT IDENTITY (1,1) PRIMARY KEY,
   BarberId INT FOREIGN KEY REFERENCES Barbers(BarberId),
@@ -28,7 +26,6 @@ CREATE TABLE Feedbacks (
   Feedback NVARCHAR(MAX) NOT NULL
 );
 
--- Создание таблицы "Ratings"
 CREATE TABLE Ratings (
   RatingId INT IDENTITY (1,1) PRIMARY KEY,
   BarberId INT FOREIGN KEY REFERENCES Barbers(BarberId),
@@ -36,7 +33,6 @@ CREATE TABLE Ratings (
   Rating NVARCHAR(20) NOT NULL
 );
 
--- Создание таблицы "Clients"
 CREATE TABLE Clients (
   ClientId INT IDENTITY (1,1) PRIMARY KEY,
   FullName NVARCHAR(MAX) NOT NULL CHECK (FullName <> ''),
@@ -44,7 +40,6 @@ CREATE TABLE Clients (
   Email NVARCHAR(100) NOT NULL
 );
 
--- Создание таблицы "ClientFeedbacks"
 CREATE TABLE ClientFeedbacks (
   FeedbackId INT IDENTITY (1,1) PRIMARY KEY,
   ClientId INT FOREIGN KEY REFERENCES Clients(ClientId),
@@ -52,7 +47,6 @@ CREATE TABLE ClientFeedbacks (
   Feedback NVARCHAR(MAX) NOT NULL
 );
 
--- Создание таблицы "ClientRatings"
 CREATE TABLE ClientRatings (
   RatingId INT IDENTITY (1,1) PRIMARY KEY,
   ClientId INT FOREIGN KEY REFERENCES Clients(ClientId),
@@ -60,7 +54,6 @@ CREATE TABLE ClientRatings (
   Rating NVARCHAR(20) NOT NULL
 );
 
--- Создание таблицы "Visits"
 CREATE TABLE Visits (
   VisitId INT PRIMARY KEY,
   ClientId INT FOREIGN KEY REFERENCES Clients(ClientId),
