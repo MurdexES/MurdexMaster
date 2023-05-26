@@ -7,17 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <RichTextBox Grid.Row="1" 
-                     BorderBrush="Black" 
-                     BorderThickness="3">
-        </RichTextBox>
-        <Button Content="Click This Bro" HorizontalAlignment="Left" Margin="649,0,0,0" VerticalAlignment="Center" Height="52" Width="83" RenderTransformOrigin="0.504,0.519" Click="Button_Click"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
+
+            <Button Click="AllClick" Height="40" Width="105" Margin="10" Content="All Students"/>
+
+            <TextBox x:Name="Query" VerticalContentAlignment="Center" Height="50" Width="140" VerticalAlignment="Center" />
+            <Button Click="EnterClick" Height="40" Width="80" Margin="10" Content="Enter" />
+
+        </StackPanel>
+            
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <Button Click="MaxClick" Height="40" Width="105" Margin="10" Content="Max"/>
+            <Button Click="MinClick" Height="40" Width="105" Margin="10" Content="Max"/>
+        </StackPanel>
+
+        <TextBlock x:Name="DataRes" Grid.Row="1"/>
 
     </Grid>
 </Window>
