@@ -12,10 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
 using System.Collections;
+using Microsoft.SqlServer;
+using Microsoft.Data.SqlClient;
 
-namespace Farkhad_x_Murdex
+namespace ADO.NET_Homework1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

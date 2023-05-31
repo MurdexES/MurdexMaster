@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Farkhad_x_Murdex
+namespace ADO.NET_Homework1
 {
     /// <summary>
     /// Interaction logic for App.xaml
