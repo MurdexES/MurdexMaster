@@ -24,13 +24,14 @@ namespace ADO.NET_Homework2
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString = "Data Source=DESKTOP-DNU6I5R;Initial Catalog=ProductsDB;Integrated Security=True";
+        string connectionString = "Data Source=localhost;Database=ProductsDB;Trusted_Connection=True;";
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>() { new Product("name", "desc", 14f, "brand") , new Product("name", "desc", 22, "brand") , new Product("name", "desc", 5, "brand") };
 
 
         public MainWindow()
         {
             InitializeComponent();
+            OnStartUp(connectionString);
             ProductsIC.ItemsSource = Products;
         }
 
