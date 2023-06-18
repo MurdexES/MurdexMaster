@@ -1,4 +1,5 @@
-﻿using CountriesEF_HW.Model.DBContexts;
+﻿using CountriesEF_HW.Model;
+using CountriesEF_HW.Model.DBContexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,33 @@ namespace CountriesEF_HW
         private void LoadCountries()
         {
             CountriesLV.ItemsSource = context.Countries.ToList();
+        }
+
+        private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedFilter = SortCB.SelectedIndex;
+            IQueryable<Country> query;
+
+            using (var dbContext = new CountriesContext())
+            {
+                switch (selectedFilter)
+                {
+                    case 0:
+                        query = dbContext.Countries.OrderBy(c => c.Population);
+                        break;
+                    case 1:
+                        query = dbContext.Countries.OrderBy(c => c.GDP);
+                        break;
+                    case 2:
+                        query = dbContext.Countries.OrderBy(c => c.Name);
+                        break;
+                    default:
+                        query = dbContext.Countries;
+                        break;
+                }
+
+                CountriesLV.ItemsSource = query.ToList();
+            }
         }
     }
 }

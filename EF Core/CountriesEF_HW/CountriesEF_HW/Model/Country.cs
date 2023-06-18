@@ -27,5 +27,9 @@ namespace CountriesEF_HW.Model
         public uint Population { get; set; }
         public uint Area { get; set; }
         public double GDP { get; set; }
+
+        //New
+        public string CurrentRuler { get; set; }
+        public string NationalAnthem { get; set; }
     }
 }
