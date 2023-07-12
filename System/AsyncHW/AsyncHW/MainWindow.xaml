@@ -1,0 +1,42 @@
+﻿<Window x:Class="AsyncHW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncHW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="CreateBT" Content="Create" FontSize="25" Margin="35" Click="CreateBT_Click"/>
+        <Button x:Name="DeleteBT" Grid.Row="1" Content="Delete" FontSize="25" Margin="35" Click="DeleteBT_Click"/>
+
+        <TextBlock Text="Enter name of country you want to create: " FontSize="18" FontWeight="Bold" Grid.Row="2"/>
+        <TextBox x:Name="CountryNameTB" Grid.Row="2" Margin="40"/>
+
+        <TextBlock Text="Enter year of country`s foundation you want to create: " FontSize="18" FontWeight="Bold" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="CountryYearTB" Grid.Row="2" Grid.Column="1" Margin="40"/>
+
+        <ListBox x:Name="CountriesLB" Grid.RowSpan="2" Grid.Column="1" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" FontSize="15" Margin="5"/>
+                        <TextBlock Text="{Binding YearFounded}" FontSize="15" Margin="5"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </Grid>
+</Window>
