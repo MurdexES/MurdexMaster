@@ -1,4 +1,6 @@
 ﻿using AsyncHW.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,30 +29,11 @@ namespace AsyncHW
         {
             InitializeComponent();
             countryContext = new CountriesContext();
-            LoadCountries();
         }
 
-        private void LoadCountries()
+        private async Task ShowCountries()
         {
-            CountriesLB.ItemsSource = countryContext.Countries.ToList();
-        }
-
-        public async Task CreateAsync(Country country)
-        {
-            using (var context = new CountriesContext())
-            {
-                context.Countries.Add(country);
-                await context.SaveChangesAsync();
-            }
-        }
-
-        public async Task DeleteAsync(Country country)
-        {
-            using (countryContext)
-            {
-                countryContext.Countries.Remove(country);
-                await countryContext.SaveChangesAsync();
-            }
+            CountriesLB.ItemsSource = await countryContext.Countries.ToListAsync();
         }
 
         private async void CreateBT_Click(object sender, RoutedEventArgs e)
@@ -66,7 +49,10 @@ namespace AsyncHW
 
                 country = new Country(name, yearFounded, string.Empty, string.Empty, 0, 0, 0);
 
-                await CreateAsync(country);
+                countryContext.Countries.Add(country);
+
+                await countryContext.SaveChangesAsync();
+                await ShowCountries();
             }
             else
             {
@@ -80,7 +66,10 @@ namespace AsyncHW
 
             country = CountriesLB.SelectedItem as Country;
 
-            await DeleteAsync(country);
+            countryContext.Countries.Remove(country);
+
+            await countryContext.SaveChangesAsync();
+            await ShowCountries();
         }
     }
 }

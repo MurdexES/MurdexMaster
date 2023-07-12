@@ -15,10 +15,5 @@ namespace AsyncHW.Data
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-DNU6I5R;Initial Catalog=CountryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Country>().HasKey(e => e.Id);
-        }
     }
 }
