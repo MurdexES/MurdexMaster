@@ -10,13 +10,12 @@ Console.WriteLine($"Client Connected Port {serverPort}");
 
 NetworkStream stream = tcpClient.GetStream();
 
-
 string request = "Hello Server";
 byte[] requestBytes = Encoding.UTF8.GetBytes(request);
 stream.Write(requestBytes, 0, requestBytes.Length);
 
 Console.WriteLine($"Sent message: {request}");
-
+ 
 
 byte[] responseBuffer = new byte[1024];
 int bytesRead = stream.Read(responseBuffer, 0, responseBuffer.Length);
