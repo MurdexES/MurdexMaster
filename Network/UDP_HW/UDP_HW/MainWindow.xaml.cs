@@ -22,7 +22,7 @@ namespace UDP_HW
     /// </summary>
     public partial class MainWindow : Window
     {
-        private UdpClient udpClient;
+        private UdpClient udpClient = new UdpClient();
         private int port;
         private IPAddress address;
 
@@ -31,17 +31,16 @@ namespace UDP_HW
             InitializeComponent();
 
             address = IPAddress.Parse("224.1.2.3");
-            port = 8088;
-
-            udpClient = new UdpClient();
+            port = 8080;
 
             udpClient.JoinMulticastGroup(address);
             udpClient.EnableBroadcast = true;
+            
             udpClient.Client.Bind(new IPEndPoint(IPAddress.Any, port));
-            udpClient.BeginReceive(ReceiveCallback, null);
+            udpClient.BeginReceive(Receive, null);
         }
 
-        private void ReceiveCallback(IAsyncResult asyncRes)
+        private void Receive(IAsyncResult asyncRes)
         {
             try
             {
@@ -54,23 +53,25 @@ namespace UDP_HW
                 {
                     MessagesList.Items.Add(message);
                 });
-
-                udpClient.BeginReceive(ReceiveCallback, null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error");
             }
+            finally
+            {
+                udpClient.BeginReceive(Receive, null);
+            }
         }
 
         private void SendBtn_Click(object sender, RoutedEventArgs e)
         {
-            IPEndPoint ipEndPoint = new IPEndPoint(address, port);
+            IPEndPoint endPoint = new IPEndPoint(address, port);
 
             string message = MessageText.Text;
             byte[] data = Encoding.UTF8.GetBytes(message);
             
-            udpClient.Send(data, data.Length, ipEndPoint);
+            udpClient.Send(data, data.Length, endPoint);
 
             MessageText.Text = string.Empty;
         }
