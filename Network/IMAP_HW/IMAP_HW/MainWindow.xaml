@@ -1,0 +1,73 @@
+﻿<Window x:Class="IMAP_HW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMAP_HW"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2" Background="#def3fc">
+
+            <Label Content="Your Email :" VerticalAlignment="Center"/>
+            <TextBox x:Name="EmailTB" Width="150" Margin="5"/>
+            
+            <Label Content="Password :" VerticalAlignment="Center"/>
+            <TextBox x:Name="PasswordTB" Width="150" Margin="5"/>
+
+            <Button x:Name="ConnectBtn" Content="Connect" Margin="10 0 10 0" Background="White" Click="ConnectBtn_Click"/>
+            <Button x:Name="AllMessagesBtn" Content="Get your messages" Margin="10 0 10 0" Background="White" Click="AllMessagesBtn_Click"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+            <Label Content="Your messages :" FontSize="12" Margin="10"/>
+            <ListBox Height="300" Margin="10" ItemsSource="{Binding mimeMessages}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding From}" Margin="5"/>
+                            <TextBlock Text="{Binding Text}" Margin="5"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" Background="#def3fc">
+            
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Subject :" VerticalAlignment="Center"/>
+                        <Label Content="Receiver :" VerticalAlignment="Center" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <TextBox x:Name="SubjectTB" Width="150" Margin="5"/>
+                        <TextBox x:Name="ReceiverTB" Width="150" Margin="5"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <Label Content="Your message :" VerticalAlignment="Center"/>
+                <TextBox x:Name="MailBody" Margin="10" Height="170"/>
+            </StackPanel>
+
+            <Button x:Name="AttachBtn" Content="Attach File" Margin="20 10 20 10" Height="35" Background="White" Click="AttachBtn_Click"/>
+            <Button x:Name="SendBtn" Content="Send" Width="200" Height="30" Background="White" Click="SendBtn_Click"/>
+        
+        </StackPanel>
+    </Grid>
+</Window>
