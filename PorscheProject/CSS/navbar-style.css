@@ -36,7 +36,7 @@ header {
 }
 
 .logo img {
-    height: 50%;
+    height: 100%;
     width: 200%;
     object-fit: contain;
 }
