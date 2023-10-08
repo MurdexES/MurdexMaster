@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
         <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/modelStyle.css">
         <title>Porsche</title>
     </head>
     <body>
@@ -28,7 +28,7 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link">Home</a>
+                            <a href="#home" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
                             <a href="#about" class="nav__link">About</a>
@@ -141,12 +141,7 @@
             </section>
 
             <!--==================== FEATURES ====================-->
-            <section class="features section">
-                
-            </section>
-
-            <!--==================== FEATURED ====================-->
-            <section class="featured section" id="featured">
+            <section class="features section" id="featured">
                 <h2 class="section__title">
                     More Features
                 </h2>
@@ -156,17 +151,17 @@
                         <img src="Assets/features.png" alt="" class="features__img">
                     </div>
 
-                    <div class="features_card features__card-1">
+                    <div class="features__card features__card-1">
                         <h3 class="features__card-title">800v</h3>
                         <p class="features__card-description">Turbo <br> Chargin</p>
                     </div>
 
-                    <div class="features_card features__card-2">
+                    <div class="features__card features__card-2">
                         <h3 class="features__card-title">350</h3>
                         <p class="features__card-description">KM <br> Range</p>
                     </div>
 
-                    <div class="features_card features__card-3">
+                    <div class="features__card features__card-3">
                         <h3 class="features__card-title">480</h3>
                         <p class="features__card-description">KM <br> Travel</p>
                     </div>
@@ -175,10 +170,14 @@
                 <img src="Assets/map.svg" alt="" class="features__map">
             </section>
 
+            <!--==================== FEATURED ====================-->
+            <section class="featured section" >
+                
+            </section>
+
             <!--==================== OFFER ====================-->
             <section class="offer section">
                 <div class="offer__container container grid">
-                    <img src="Assets/offer.png" alt="" class="offer__bg">
                     <div class="offer__data">
                         <h2 class="section__offer offer__title">
                             Do You Want To Receive <br> Special Offers ?
@@ -219,12 +218,99 @@
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section">
-            
+            <div class="shape shape__big"></div>
+            <div class="shape shape__small"></div>
+
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <i class="ri-steering-line"></i> Elecar
+                    </a>
+
+                    <p class="footer__description">
+                        We offer the best electric cars of <br>
+                        the most recognized brands in <br>
+                        the world.
+                    </p>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Company
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">Cars</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">History</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Information
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Request a quote</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">Find a dealer</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">Contact us</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer__link">Services</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Follow us
+                    </h3>
+
+                    <ul class="footer__social">
+                        <a href="" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="" target="_blank" class="footer__social-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="footer__copy">
+                &#169; Porsche AG. All rigths reserved
+            </span>
         </footer>
 
 
         <!--========== SCROLL UP ==========-->
-
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
 
         <!--=============== SCROLL REVEAL ===============-->
         <script src="js/scrollreveal.min.js"></script>
