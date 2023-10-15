@@ -356,6 +356,7 @@ img {
 /*=============== BUTTON ===============*/
 .button {
   display: inline-block;
+  margin: 2rem;
   background-color: var(--first-color);
   color: var(--white-color);
   padding: 1rem 2rem;
@@ -387,6 +388,7 @@ img {
   position: absolute;
   right: 0;
   bottom: -2.5rem;
+  margin: 2rem;
   background-color: hsla(0, 0%, 100%, 0.1);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
@@ -406,15 +408,13 @@ img {
 
 .about__title {
   text-align: initial;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 .about__description {
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
-/*=============== POPULAR ===============*/
-/* Swiper class */
 /*=============== FEATURES ===============*/
 .features {
   overflow: hidden;
@@ -451,14 +451,14 @@ img {
   z-index: 1;
 }
 
-.features__card-1{
+.features__card-1 {
   top: 28rem;
   left: 1.5rem;
 }
 
-.features__card-2{
+.features__card-2 {
   top: 18rem;
-  left: 16.5rem;
+  right: 2rem;
 }
 
 .features__card-3 {
@@ -481,11 +481,33 @@ img {
   top: 8rem;
   left: -3rem;
   margin: auto;
-  transform: rotate(-22deg);
 }
 
-/*=============== FEATURED ===============*/
-/* Active link featured */
+/*=============== Viewer ===============*/
+.viewer{
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.viewer__viewport{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+}
+
+.section_title{
+  font-size: var(--h1-font-size);
+}
+
+.model__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+}
+
 /*=============== OFFER ===============*/
 .offer {
   position: relative;
@@ -720,6 +742,16 @@ img {
     right: 0;
   }
 
+  .features__card-1{
+    top: -2;
+    left: -2.25rem;
+  }
+
+  .features__card-2{
+    top: 27;
+    left: 24.7;
+  }
+
   .offer__container{
     grid-template-rows: initial;
     grid-template-columns: .5fr;
@@ -843,20 +875,22 @@ img {
   }
 
   .features__card-1{
-    left: -1rem;
+    top: 40rem;
+    left: 3rem;
   }
 
   .features__card-2{
-    right: -2.5rem;
+    top: 33rem;
+    right: 10rem;
   }
 
   .features__card-3{
-    bottom: 7rem;
-    left: -1rem;
+    top: 18rem;
+    left: 4rem;
   }
 
   .features__map{
-    width: 650px;
+    width: 100%;
     top: 11rem;
   }
 

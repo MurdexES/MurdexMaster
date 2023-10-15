@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+		<script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+	</head>
+	<body>
+
+		<div id="car-viewer-container"></div>
+
+		<script>
+			// Create a scene
+			const scene = new THREE.Scene();
+
+			// Create a camera
+			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+			const ambientLight = new THREE.AmbientLight(0x404040); // Set the color
+			scene.add(ambientLight);
+
+			const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // Set the color and intensity
+			directionalLight.position.set(1, 1, 1); // Set the direction
+			scene.add(directionalLight);
+
+			const pointLight = new THREE.PointLight(0xff0000, 1, 100); // Set the color, intensity, and distance
+			pointLight.position.set(2, 3, 4); // Set the position
+			scene.add(pointLight);
+
+			const spotLight = new THREE.SpotLight(0xff0000, 1); // Set the color and intensity
+			spotLight.position.set(2, 3, 4); // Set the position
+			spotLight.target.position.set(0, 0, 0); // Set the target position
+			scene.add(spotLight);
+			scene.add(spotLight.target);
+
+			const spotLight2 = new THREE.SpotLight(0xff00ff, 1); // Set the color and intensity
+			spotLight.position.set(2, 3, 4); // Set the position
+			spotLight.target.position.set(0, 0, 0); // Set the target position
+			scene.add(spotLight);
+			scene.add(spotLight.target);
+
+			// Create a renderer
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.getElementById('car-viewer-container').appendChild(renderer.domElement);
+
+			// Load the GLTF model
+			const loader = new THREE.GLTFLoader();
+			let carModel;
+			loader.load('scene.gltf', (gltf) => {
+			carModel = gltf.scene;
+			scene.add(carModel);
+			});
+
+			// Position the camera
+			camera.position.z = 5;
+
+			// Initialize OrbitControls
+			const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+			// Set the target to the center of the car model
+			controls.target.set(0, 0, 0);
+
+			// Enable damping (smoothly decelerate after panning)
+			controls.enableDamping = true;
+
+			// Set the damping factor (0.1 is a reasonable value, but you can adjust it)
+			controls.dampingFactor = 0.1;
+
+			// Enable zooming
+			controls.enableZoom = true;
+
+			// Set the minimum and maximum distance for zooming (optional)
+			controls.minDistance = 2; // Minimum zoom distance
+			controls.maxDistance = 10; // Maximum zoom distance
+
+			// Enable rotating
+			controls.enableRotate = true;
+
+			// Set the auto-rotation speed (optional)
+			controls.autoRotate = true; // Set to true for auto-rotation
+			controls.autoRotateSpeed = 2; // Adjust the speed
+
+			const animate = () => {
+			requestAnimationFrame(animate);
+
+			// Update OrbitControls
+			controls.update();
+
+			renderer.render(scene, camera);
+			};
+
+			animate();
+		</script>
+	</body>
+</html>

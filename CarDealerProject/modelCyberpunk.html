@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="" type="assets/fa">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/cyberpunk.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js" integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg==" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+        
+        <title>Porsche</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="/index.html" class="nav__logo">
+                    <img src="Assets/logo1.png" alt="" class="logos__img">
+                    Porsche
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#viewer" class="nav__link">Viewer</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="shape shape__big"></div>
+                <div class="shape shape__small"></div>
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Choose The Best Car
+                        </h1>
+
+                        <h2 class="home__subtitle">
+                            Porsche Cyberpunk 911
+                        </h2>
+
+                        <h3 class="home__elec">
+                            <i class="ri-flashlight-fill"></i> Electric Car
+                        </h3>
+                    </div>
+
+                    <img src="/Assets/cyberpunkHome.jpeg" alt="" class="home__img">
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__group">
+                        <img src="Assets/cyberpunkInterior.jpg" alt="" class="about__img">
+                    </div>
+                </div>
+
+                <div class="about__data">
+                    <h2 class="section__title about__title">
+                        Machines With <br> Future Technology
+                    </h2>
+
+                    <p class="about__description">
+                        See the future with high-performance electric cars produced by
+                        renowned brands. They feature futuristic builds and designs with
+                        new and innovative platforms that last a long time.
+                    </p>
+
+                    <a href="#" class="button">Know more</a>
+                </div>
+            </section>
+
+            <!--==================== Viewer ====================-->
+            <section class="viewer section" id="viewer">
+                <div class="viewer__container container grid">
+                    <h2 class="section_title">
+                        3D Viewer
+                    </h2>
+
+                    <h3 class="model__title">Cyberpunk 911</h3>
+
+                    <div class="viewer__viewport" id="container3D">
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== OFFER ====================-->
+            <section class="offer section">
+                <div class="offer__container container grid">
+                    <div class="offer__data">
+                        <h2 class="section__offer offer__title">
+                            Do You Want To Receive <br> Special Offers ?
+                        </h2>
+
+                        <p class="offer__description">
+                            Be the first to receive all the information about out 
+                            products and new cards by email by subscribing to our
+                            mailing list.
+                        </p>
+
+                        <a href="#" class="button">
+                            Subscribe Now
+                        </a>
+                    </div>
+
+                    <img src="Assets/offerCyberpunk.png" alt="" class="offer__img">
+                </div>
+            </section>
+
+            <!--==================== LOGOS ====================-->
+            <section class="logos section">
+                <div class="logos__container container grid">
+                    <div class="logos__content">
+                        <img src="Assets/logo1.png" alt="" class="logos__img">
+                    </div>
+
+                    <div class="logos__content">
+                        <img src="Assets/volkswagen-512-3723836952.png" alt="" class="logos__img">
+                    </div>
+
+                    <div class="logos__content">
+                        <img src="Assets/bentley-logo-big-3977929017.png" alt="" class="logos__img">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="shape shape__big"></div>
+            <div class="shape shape__small"></div>
+
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">
+                        <img src="Assets/logo1.png" alt="" class="logos__img"> Porsche
+                    </a>
+
+                    <p class="footer__description">
+                        We offer the best cars of <br>
+                        the most recognized brands in <br>
+                        the world.
+                    </p>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Company
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="https://www.porsche.com/uk/motorsportandevents/motorsport/" class="footer__link">About</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.porsche.com/uk/models/911/" class="footer__link">Cars</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.porsche.com/international/aboutporsche/porschemuseum/" class="footer__link">History</a>
+                        </li>
+
+                        <li>
+                            <a href="https://shop.porsche.com/gb/en-GB" class="footer__link">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Information
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="https://www.porsche.com/silverstone/en/" class="footer__link">Request a quote</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.porsche.com/uk/?referrer_url=https%3A%2F%2Fwww.porsche.com%2Fcentral-eastern-europe%2Fru%2F_azerbaijan_%2F" class="footer__link">Find a dealer</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.porsche.com/uk/dialog/contactandinformation/" class="footer__link">Contact us</a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.porsche.com/uk/accessoriesandservice/tequipment/" class="footer__link">Services</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">
+                        Follow us
+                    </h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/porsche/" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/porsche_gb/" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/porschegb" target="_blank" class="footer__social-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="footer__copy">
+                &#169; Porsche AG. All rigths reserved
+            </span>
+        </footer>
+
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a>
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="js/scrollreveal.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <!--=============== MIXITUP JS ===============-->
+        <script src="js/mixitup.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/modelScript.js"></script>
+
+        <script type="text/javascript">
+            const audio = new Audio();
+            audio.src = ""
+        </script>
+    
+        <script>
+			const scene = new THREE.Scene();
+
+            const camera = new THREE.PerspectiveCamera(75, (window.innerWidth/2) / (window.innerHeight/2), 0.1, 1000);
+
+            const ambientLight = new THREE.AmbientLight(0x404040); // Set the color
+            scene.add(ambientLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5); // Set the color and intensity
+            directionalLight.position.set(1, 1, 1); // Set the direction
+            scene.add(directionalLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 1, 100); // Set the color, intensity, and distance
+            pointLight.position.set(2, 3, 4); // Set the position
+            scene.add(pointLight);
+
+            const spotLight = new THREE.SpotLight(0xffffff, 1); // Set the color and intensity
+            spotLight.position.set(2, 3, 4); // Set the position
+            spotLight.target.position.set(0, 0, 0); // Set the target position
+            scene.add(spotLight);
+            scene.add(spotLight.target);
+
+            const spotLight2 = new THREE.SpotLight(0xff00ff, 1); // Set the color and intensity
+            spotLight.position.set(2, 3, 1); // Set the position
+            spotLight.target.position.set(0, 0, 0); // Set the target position
+            scene.add(spotLight);
+            scene.add(spotLight.target);
+
+            // Create a renderer
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0x0a0a0b); // Change the color (black in this example)
+            renderer.setClearAlpha(1); // Set the alpha (1 for fully opaque)
+            
+            document.getElementById('container3D').appendChild(renderer.domElement);
+
+            // Load the GLTF model
+            const loader = new THREE.GLTFLoader();
+            let carModel;
+            loader.load('../Assets/3D/Cyberpunk911/scene.gltf', (gltf) => {
+            carModel = gltf.scene;
+            scene.add(carModel);
+            });
+
+            // Position the camera
+            camera.position.z = 5;
+
+            // Initialize OrbitControls
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            // Set the target to the center of the car model
+            controls.target.set(0, 0, 0);
+
+            // Enable damping (smoothly decelerate after panning)
+            controls.enableDamping = true;
+
+            // Set the damping factor (0.1 is a reasonable value, but you can adjust it)
+            controls.dampingFactor = 0.1;
+
+            // Enable zooming
+            controls.enableZoom = true;
+
+            // Set the minimum and maximum distance for zooming (optional)
+            controls.minDistance = 2; // Minimum zoom distance
+            controls.maxDistance = 10; // Maximum zoom distance
+
+            // Enable rotating
+            controls.enableRotate = true;
+
+            // Set the auto-rotation speed (optional)
+            controls.autoRotate = true; // Set to true for auto-rotation
+            controls.autoRotateSpeed = 2; // Adjust the speed
+
+            const animate = () => {
+            requestAnimationFrame(animate);
+
+            // Update OrbitControls
+            controls.update();
+
+            renderer.render(scene, camera);
+            };
+
+            animate();
+        </script>
+    </body>
+</html>
