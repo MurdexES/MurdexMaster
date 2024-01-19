@@ -1,1 +1,1 @@
-##Dungeon ##Master ##- ##F***ing ##Slave
+#DungeonMaster - F***ing Slave
