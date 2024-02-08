@@ -1,6 +1,6 @@
 import { addingData, deletingData, editingData  } from "./reducer.js";
 
-function addData(obj){
+export function addData(obj){
     return function(dispatch){
         fetch('http://localhost:5000/add', {
             method:'POST',
@@ -13,7 +13,7 @@ function addData(obj){
     }
 }
 
-function deleteData(id){
+export function deleteData(id){
     return function(dispatch){
         fetch(`http://localhost:5000/delete-admin/${id}`, {
             method: 'DELETE',
@@ -23,7 +23,7 @@ function deleteData(id){
     }
 }
 
-function editData(obj) {
+export function editData(obj) {
     return function(dispatch) {
         fetch(`http://localhost:5000/change-admin/${obj.id}`, {
             method: 'PUT',
@@ -36,5 +36,3 @@ function editData(obj) {
         .then(data => dispatch(editingData(data)))
     }
 }
-
-export default addData; deleteData; editData;

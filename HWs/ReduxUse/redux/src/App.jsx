@@ -7,11 +7,16 @@ import Admin from './components/Admin'
 import MyBag from './components/MyBag'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [query, setQuery] = useState('')
 
   return (
     <>
-
+      <Header setQuery={setQuery}/>
+      <Routes>
+        <Route path='/' element={<Home query={query}/>}/>
+        <Route path='/admin' element={<Admin/>}/>
+        <Route path='/my-bag' element={<MyBag/>}/>
+      </Routes>
     </>
   )
 }

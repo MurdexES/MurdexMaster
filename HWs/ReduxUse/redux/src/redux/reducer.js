@@ -10,7 +10,7 @@ export const fetchContent = createAsyncThunk(
 const goodsSlice = createSlice({
         name: 'goods',
         initialState: {
-            goods: [],
+            goodsArray: [],
             addInfo: '',
             deleteInfo: '',
             isLoading: false,
@@ -18,13 +18,13 @@ const goodsSlice = createSlice({
         },
         reducers: {
             addingData(state, action){
-                return {...state,goods: action.payload}
+                return {...state,goodsArray: action.payload}
             },
             deletingData(state, action){
-                return {...state,goods: action.payload}
+                return {...state,goodsArray: action.payload}
             },
             editingData(state, action){
-                return {...state,goods: action.payload}
+                return {...state,goodsArray: action.payload}
             }
         },
         extraReducers: (builder) => {
@@ -33,7 +33,7 @@ const goodsSlice = createSlice({
             }),
             builder.addCase(fetchContent.fulfilled, (state, action) => {
                 state.isLoading = false
-                state.goods = action.payload
+                state.goodsArray = action.payload
             }),
             builder.addCase(fetchContent.rejected, (state, action) => {
                 state.isLoading = false
