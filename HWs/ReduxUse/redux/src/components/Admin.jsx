@@ -2,8 +2,9 @@ import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addData, deleteData, editData } from "../redux/getUsersData"
 import { fetchContent } from "../redux/reducer"
-import { Sentry } from 'react-activity/dist/Sentry'
-import 'react-activity/dist/Sentry.css'
+import Levels from 'react-activity/dist/Levels'
+import 'react-activity/dist/Levels.css'
+import Editor from "./Editor"
 
 function Admin() {
   let usersArray = useSelector((state) => state.goods.goodsArray)
@@ -20,7 +21,7 @@ function Admin() {
     return (
       <div>
       <h1>ADMIN</h1>
-        <Sentry />
+        <Levels />
       </div>
       )
   }
