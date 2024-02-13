@@ -1,3 +1,3 @@
 ## I can buy the building, 
-## burn the building, take your bitch
-## Rebuild the building just to fuck some more
+## burn the building, take your b***h
+## Rebuild the building just to f*ck some more
