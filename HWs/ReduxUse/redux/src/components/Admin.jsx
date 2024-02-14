@@ -5,6 +5,7 @@ import { fetchContent } from "../redux/reducer"
 import Levels from 'react-activity/dist/Levels'
 import 'react-activity/dist/Levels.css'
 import Editor from "./Editor"
+import { Card, Row } from 'antd'
 
 function Admin() {
   let usersArray = useSelector((state) => state.goods.goodsArray)
@@ -38,29 +39,32 @@ function Admin() {
   return (
     <div>
       <h1>ADMIN</h1>
-        <button onClick={() => {
-        dispatch(addData({
-          product_name: item.product_name,
-          product_description: item.product_description,
-          product_price: item.product_price,
-          store_name: item.store_name,
-          store_address: item.store_address,
-        }))
-        console.log(usersArray)
-      }}>Add Product</button>
-      <br/>
-      <button onClick={() => {
-        for(let i = 0; i < 1000; i++){
-          dispatch(addData({
-            product_name: item.product_name,
-            product_description: item.product_description,
-            product_price: item.product_price,
-            store_name: item.store_name,
-            store_address: item.store_address,
-          }))
-        }
-        console.log(usersArray)
-      }}>you can add products</button>
+      <Card>
+        <Row>
+            <button onClick={() => {
+            dispatch(addData({
+              product_name: item.product_name,
+              product_description: item.product_description,
+              product_price: item.product_price,
+              store_name: item.store_name,
+              store_address: item.store_address,
+            }))
+            console.log(usersArray)
+          }}>Add Product</button>
+          <br/>
+          <button onClick={() => {
+            for(let i = 0; i < 1000; i++){
+              dispatch(addData({
+                product_name: item.product_name,
+                product_description: item.product_description,
+                product_price: item.product_price,
+                store_name: item.store_name,
+                store_address: item.store_address,
+              }))
+            }
+            console.log(usersArray)
+          }}>you can add products</button>
+        </Row>
         <ul className="goods">
         {usersArray.map((item) => {
           return(
@@ -83,7 +87,7 @@ function Admin() {
         })}
         </ul>
         {showEditor && <Editor setShowEditor={setShowEditor} id={id} />}
-      
+      </Card>
     </div>
   )
 }

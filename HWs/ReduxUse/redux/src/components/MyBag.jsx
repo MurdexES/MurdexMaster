@@ -1,8 +1,10 @@
-
+import { Card } from 'antd'
 function MyBag() {
     return(
         <>
-            <h1>My Bag</h1>
+            <Card>
+                <h1>My Bag</h1>
+            </Card>
         </>
     )
 }

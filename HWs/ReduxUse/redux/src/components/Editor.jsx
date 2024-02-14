@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { editData } from '../redux/getUsersData'
+import { Card } from 'antd'
 
 function Editor({setShowEditor, id}){
     let [name, setName] = useState('')
@@ -21,7 +22,7 @@ function Editor({setShowEditor, id}){
         setShowModal(false)
     }
     return (
-        <div className="modal-container">
+        <Card className="modal-container">
         <div className="modal">
             <button className="modalExit" onClick={() => setShowModal(false)}>Exit X</button>
             <h2>Editor</h2>
@@ -32,7 +33,7 @@ function Editor({setShowEditor, id}){
             <input onChange={(ev) => setStoreAdress(ev.target.value)} type="text" placeholder="Store Address"/>
             <button onClick={() => Update()}>Edit</button>
         </div>
-        </div>
+        </Card>
     )
 }
 
