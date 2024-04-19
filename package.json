@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "antd": "^5.14.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "supertest": "^6.3.4"
+  }
+}
