@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+
+    <form id="filter-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="department">Department:</label>
+        
+        <select id="department" name="department">
+            <option value="">All</option>
+            <option value="Маркетинг">Маркетинг</option>
+            <option value="Финансы">Финансы</option>
+            <option value="ИТ">ИТ</option>
+            <option value="Человеческие ресурсы">Человеческие ресурсы</option>
+        </select>
+        
+        <button type="submit">Filter</button>
+    </form>
+    
+    <ul id="user-list"></ul>
+    
+    <script>
+        document.getElementById('filter-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+       
+        const name = document.getElementById('name').value;
+        const department = document.getElementById('department').value;
+
+        const response = await fetch(`/api/users?name=${name}&department=${department}`);
+        const users = await response.json();
+
+        const userList = document.getElementById('user-list');
+        userList.innerHTML = '';
+        users.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `${user.name} - ${user.department} - ${user.position}`;
+            userList.appendChild(li);
+        });
+        });
+    </script>
+</body>
+</html>
