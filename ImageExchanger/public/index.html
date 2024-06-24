@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+</head>
+<body>
+    <h1>Photos</h1>
+
+    <button id="showFormButton">Add Photo</button>
+
+    <form id="photoForm" style="display: none;">
+        <label for="url">Photo URL:</label>
+        <input type="text" id="url" name="url" required><br><br>
+        
+        <label for="type">Photo Type:</label>
+        <input type="text" id="type" name="type" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="photos"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+        const response = await fetch('/photos');
+        const photos = await response.json();
+        const photosContainer = document.getElementById('photos');
+
+        photos.forEach(photo => {
+            const photoElement = document.createElement('div');
+            photoElement.innerHTML = `<img src="${photo.url}" alt="${photo.type}" width="400">`;
+            photosContainer.appendChild(photoElement);
+        });
+
+        document.getElementById('showFormButton').addEventListener('click', function() {
+            document.getElementById('photoForm').style.display = 'block';
+        });
+
+        document.getElementById('photoForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const url = document.getElementById('url').value;
+            const type = document.getElementById('type').value;
+            
+            const response = await fetch('/addPhoto', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url, type })
+            });
+            
+            const result = await response.text();
+            console.log(result);
+            
+            document.getElementById('url').value = '';
+            document.getElementById('type').value = '';
+
+            fetchPhotos();
+        });
+
+        async function fetchPhotos() {
+            const response = await fetch('/photos');
+            const newPhotos = await response.json();
+            
+            photosContainer.innerHTML = '';
+
+            newPhotos.forEach(photo => {
+            const photoElement = document.createElement('div');
+            photoElement.innerHTML = `<img src="${photo.url}" alt="${photo.type}" width="400">`;
+            photosContainer.appendChild(photoElement);
+            });
+        }
+        });
+    </script>
+</body>
+</html>
