@@ -1,33 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [result, setResult] = useState('')
+  const [inputs, setInputs] = useState({
+    input1: '',
+    input2: '',
+    input3: '',
+    input4: '',
+    input5: '',
+  });
+
+  const create = async () => {
+    const query = `input1=${encodeURIComponent(inputs.input1)}&input2=${encodeURIComponent(inputs.input2)}&input3=${encodeURIComponent(inputs.input3)}&input4=${encodeURIComponent(inputs.input4)}&input5=${encodeURIComponent(inputs.input5)}`;
+    const res = await fetch(`http://localhost:3000/bufferToFile?${query}`,
+    {
+      method: 'POST'
+    });
+    
+    const data = await res.text()
+    setResult(data)
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='main_box'>
+        <div className='inputs_box'>
+          <input id="input1" onChange={(e) => setInputs({...inputs, input1: e.target.value})}/>
+          <input id="input2" onChange={(e) => setInputs({...inputs, input2: e.target.value})}/>
+          <input id="input3" onChange={(e) => setInputs({...inputs, input3: e.target.value})}/>
+          <input id="input4" onChange={(e) => setInputs({...inputs, input4: e.target.value})}/>
+          <input id="input5" onChange={(e) => setInputs({...inputs, input5: e.target.value})}/>
+        </div>
+
+        <hr/>
+        
+        <button onClick={() => create()}>Create</button>
+        
+        <h2>Outcome:</h2>
+        <p>{result}</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.main_box{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.main_box button {
+  margin: 4rem;
+}
+
+.inputs_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-items: center;
+}
