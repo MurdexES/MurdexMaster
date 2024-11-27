@@ -2,13 +2,34 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { posts } from '@/pages/data';
 
-export default function PostPage() {
-  const { query } = useRouter();
-  const { categoryId, postId } = query;
+export async function getStaticPaths() {
+  const res = await fetch('http://localhost:3001/posts');
+  const posts = await res.json();
 
-  const categoryPosts = posts[categoryId];
-  const post = categoryPosts ? categoryPosts.find((p) => p.id === postId) : null;
+  const paths = posts.map((post) => ({
+    params: {
+      categoryId: post.categoryId,
+      postId: post.id,
+    },
+  }));
 
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const { postId } = params;
+
+  const res = await fetch(`http://localhost:3001/posts/${postId}`);
+  const post = await res.json();
+
+  return {
+    props: {
+      post,
+    },
+  };
+}
+
+export default function PostPage({ post }) {
   if (!post) {
     return <h1>Post not found</h1>;
   }
@@ -20,7 +41,7 @@ export default function PostPage() {
       
       <p className='text-lg'>{post.content}</p>
       
-      <Link href={`/category/${categoryId}`} className="hover:underline hover:text-green-500 mt-10">Back to Posts</Link>
+      <Link href={`/category/${post.categoryId}`} className="hover:underline hover:text-green-500 mt-10">Back to Posts</Link>
     </div>
   );
 }

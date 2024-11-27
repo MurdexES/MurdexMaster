@@ -1,7 +1,17 @@
 import Link from "next/link";
-import { categories } from "./data";
 
-export default function Home() {
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3001/categories');
+  const categories = await res.json();
+
+  return {
+    props: {
+      categories,
+    },
+  };
+}
+
+export default function Home({ categories }) {
   return (
     <div className="flex flex-col items-center px-10 py-8">
       <h1 className="text-3xl font-bold mb-12">Blog</h1>
